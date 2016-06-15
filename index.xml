@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ICT Game Jam</title>
-    <link>http://ictgamejam.github.io/</link>
+    <link>http://devict.github.io/ictgamejam/</link>
     <description>Recent content on ICT Game Jam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://ictgamejam.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://devict.github.io/ictgamejam/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
