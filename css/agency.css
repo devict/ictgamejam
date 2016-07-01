@@ -177,6 +177,14 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-brand {
     font-family: "PT Sans Narrow","Helvetica Neue",Helvetica,Arial;
     color: #ef2176;
+    margin-bottom: 6px;
+}
+
+@media(max-width:440px) {
+    .navbar-default .navbar-brand {
+        width: 250px;
+        margin-bottom: 15px;
+    }
 }
 
 .navbar-default .navbar-brand img {
@@ -282,8 +290,8 @@ header {
 }
 
 header .intro-text {
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 340px;
+    padding-bottom: 28px;
 }
 
 header .intro-text .intro-lead-in {
