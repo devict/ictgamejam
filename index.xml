@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ICT Game Jam</title>
-    <link>http://devict.github.io/ictgamejam/</link>
+    <link>http://devict.github.io/ictgamejam/index.xml</link>
     <description>Recent content on ICT Game Jam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
