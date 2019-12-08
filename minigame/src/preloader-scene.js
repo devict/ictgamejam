@@ -11,8 +11,6 @@ export default class PreloaderScene extends Phaser.Scene {
 
     preload() {
         "use strict";
-        this.sys.canvas.style.marginLeft = "auto";
-        this.sys.canvas.style.marginRight = "auto";
 
         this.cameras.main.setBackgroundColor('#FFFFFF');
         this.cameras.main.zoom = 6;
@@ -57,7 +55,6 @@ export default class PreloaderScene extends Phaser.Scene {
 
         this.scene.add('GameScene', GameScene);
 
-        console.log('starting scene');
         this.scene.start("GameScene");
     }
 }
