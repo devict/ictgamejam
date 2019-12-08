@@ -85,7 +85,6 @@ export default class GameScene extends Phaser.Scene {
     }
 
     addScenery() {
-        console.log('scnarfe');
         let scenery = this.add.sprite(this.sceneWidth + 18, this.sceneHeight - this.sceneryY, 'scenery');
         scenery.setDepth(1);
         let scnFr = this.scenerySelector[Math.floor(Math.random() * this.scenerySelector.length)];
