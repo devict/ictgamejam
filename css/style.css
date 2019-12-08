@@ -907,3 +907,18 @@ body {
 section ul {
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+/* Minigame container */
+#gameContainer {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 416px;
+    height: 248px;
+    top: -5.2em;
+}
+
+.gameContainerContainer {
+    width: 100%;
+    position: absolute;
+}
