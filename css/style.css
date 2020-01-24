@@ -10,7 +10,7 @@ body {
 }
 
 .text-muted {
-    color: #777;
+    color: #666;
 }
 
 .text-primary {
@@ -129,7 +129,7 @@ fieldset[disabled] .btn-primary.active {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 18px;
     font-weight: 700;
-    color: #707070;
+    color: #ffffff;
     background-color: #111111;
 }
 
@@ -375,6 +375,7 @@ section h3.section-subheading {
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
+    line-height: 1.5em;
 }
 
 @media(min-width:768px) {
@@ -530,7 +531,7 @@ section h3.section-subheading {
     border: 7px solid #f1f1f1;
     border-radius: 100%;
     text-align: center;
-    color: #707070;
+    color: #ffffff;
     background-color: #111111;
 }
 
@@ -786,7 +787,7 @@ ul.social-buttons li a {
     font-size: 20px;
     line-height: 40px;
     outline: 0;
-    color: #707070;
+    color: #ffffff;
     background-color: #222;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
