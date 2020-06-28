@@ -4,7 +4,7 @@ Wisdom commonly shared by the `#gamedev` channel in the Slack team for [devICT](
 ## What is this??
 We get a lot of questions, especially in the few months leading up to our bi-annual [ictgamejam.com](http://ictgamejam.com/) - so we figured it's time to crowdsource some of the most common advice and resources out in the open.  Much of this is geared towards people new to game jam
 
-Want to pitch in? Edit any of these files and submit a [Pull Request](https://github.com/devict/ictgamejam-guide/pulls) for us to review _in the browser!_ 
+Want to pitch in? [Edit this guide](https://github.com/devict/ictgamejam/edit/gh-pages/guide.md) and submit a Pull Request for us to review _in the browser!_ 
 
 We won't cover _everything_ because so much can change between events.  But we can share the information that rings true for all our events, and our gamedev community in general.  Put stuff in here that will help people be successful at most game jams, not so much how to pander to whoever might be judging that year ;)
 
