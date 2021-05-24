@@ -14,7 +14,7 @@ body {
 }
 
 .text-primary {
-    color: #111111;
+    color: #337ab7;
 }
 
 .text-secondary {
@@ -39,7 +39,7 @@ a.active {
 }
 
 a {
-    color: #777;
+    color: #337ab7;
 }
 
 a:hover,
