@@ -2,10 +2,10 @@
 Everything is on  twitter.com/ictgamejam
 
 1. Summer 2015 at the Labor Party
-  2. Shirt Color: Orange
+- 2. Shirt Color: Orange
 
 1. Summer 2016 at NCAT
-  1. Shirt Color: Blue for jammers, gray for volunteers
+- 1. Shirt Color: Blue for jammers, gray for volunteers
 
 1. Winter 2017 with Midwest Esports Convention at Wichita State
 
