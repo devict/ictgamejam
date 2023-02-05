@@ -2,12 +2,14 @@
 
 Everything is on [🐦ictgamejam](twitter.com/ictgamejam)
 
+2017-2023 archived on [itch.io](https://ictgamejam.itch.io).
+
 1. Summer 2015 at the Labor Party
     1. Shirt Color: Orange
     1. Theme: Useless Superpowers
 
 1. Summer 2016 at NCAT
-    1. Theme: 
+    1. Theme: Lost in Space
     1. Shirt Color: Blue for jammers, gray for volunteers
 
 1. Winter 2017 with Midwest Esports Convention at Wichita State
