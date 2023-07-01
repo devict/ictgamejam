@@ -58,7 +58,7 @@ State
     1. Theme: [Duality](https://youtu.be/6on52GnVE0w)
 
 1. Summer 2022 at Butler Community College
-    1. Theme:
+    1. Theme: Low Tech Space / End with Nothing / Above the Clouds
     1. No Shirt
 
 1. Winter 2023 at Wichita State Shocker Studios with the Global Game Jam
