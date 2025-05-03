@@ -792,6 +792,7 @@ ul.social-buttons li a {
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
+    padding-left: 10px;
 }
 
 ul.social-buttons li a:hover,
