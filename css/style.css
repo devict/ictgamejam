@@ -470,6 +470,7 @@ section h3.section-subheading {
     position: relative;
     padding: 0;
     list-style: none;
+    display: grid;
 }
 
 .timeline:before {
@@ -487,6 +488,10 @@ section h3.section-subheading {
     position: relative;
     margin-bottom: 50px;
     min-height: 50px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .timeline>li:before,
@@ -776,7 +781,15 @@ footer ul.quicklinks {
 }
 
 ul.social-buttons {
+    padding-top: 2.5rem;
     margin-bottom: 0;
+    display: flex;
+    list-style: none;
+}
+
+ul.social-buttons li {
+    display: inline;
+    padding: 0.5rem;
 }
 
 ul.social-buttons li a {
