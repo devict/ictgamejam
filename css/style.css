@@ -937,3 +937,8 @@ section ul {
     width: 100%;
     position: absolute;
 }
+
+ .carousel {
+   width:960px;
+   height:640px;
+ }
