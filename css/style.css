@@ -5,6 +5,7 @@
  */
 
 body {
+    overflow: auto;
     overflow-x: hidden;
     overflow-y: scroll !important;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
