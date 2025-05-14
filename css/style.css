@@ -5,7 +5,9 @@
  */
 
 body {
+    overflow: auto;
     overflow-x: hidden;
+    overflow-y: scroll !important;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
@@ -470,6 +472,7 @@ section h3.section-subheading {
     position: relative;
     padding: 0;
     list-style: none;
+    display: grid;
 }
 
 .timeline:before {
@@ -487,6 +490,10 @@ section h3.section-subheading {
     position: relative;
     margin-bottom: 50px;
     min-height: 50px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .timeline>li:before,
@@ -776,7 +783,15 @@ footer ul.quicklinks {
 }
 
 ul.social-buttons {
+    padding-top: 2.5rem;
     margin-bottom: 0;
+    display: flex;
+    list-style: none;
+}
+
+ul.social-buttons li {
+    display: inline;
+    padding: 0.5rem;
 }
 
 ul.social-buttons li a {
@@ -792,6 +807,7 @@ ul.social-buttons li a {
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
+    padding-left: 10px;
 }
 
 ul.social-buttons li a:hover,
@@ -923,3 +939,8 @@ section ul {
     width: 100%;
     position: absolute;
 }
+
+ .carousel {
+   width:960px;
+   height:640px;
+ }
