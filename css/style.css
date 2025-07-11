@@ -955,6 +955,20 @@ section ul {
    height:640px;
  }
 
+ .carousel-inner > .carousel-item > img {
+    margin: auto;
+    object-fit: contain;
+    justify-self: center;
+ }
+
+ .carousel-control-prev, .carousel-control-next {
+    filter: invert(1);
+    background-color: black;
+    opacity: 99%;
+    height: 120%;
+    width: 5%;
+ }
+
  .character-select-target {
     width: 13%;
     height: 10%;
