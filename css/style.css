@@ -301,7 +301,7 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
-header {
+header #header-image-container {
     color: #707070;
     background-attachment: scroll;
     background-image: url(../img/header-bg.jpg);
@@ -311,10 +311,20 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    min-width: 100%;
+}
+
+header .header-buttons {
+    display: flex; 
+    justify-content: center; 
+    gap: 1rem; 
+    margin-top: 1rem; 
+    margin-right: 25%;
+    padding-bottom: 1rem;
 }
 
 header .intro-text {
-    padding-top: 100px;
+    padding-top: 500px;
     padding-bottom: 50px;
 }
 
@@ -787,6 +797,7 @@ ul.social-buttons {
     margin-bottom: 0;
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 ul.social-buttons li {
@@ -796,25 +807,24 @@ ul.social-buttons li {
 
 ul.social-buttons li a {
     display: block;
-    width: 40px;
-    height: 40px;
     border-radius: 100%;
-    font-size: 20px;
-    line-height: 40px;
     outline: 0;
     color: #ffffff;
-    background-color: #222;
+    background-color: white;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
-    padding-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #111111;
+    background-color: lightgrey;
 }
+
+
 
 .btn:focus,
 .btn:active,
@@ -943,4 +953,13 @@ section ul {
  .carousel {
    width:960px;
    height:640px;
+ }
+
+ .character-select-target {
+    width: 13%;
+    height: 10%;
+ }
+
+ hr {
+    padding-top: 3rem;
  }

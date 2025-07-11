@@ -29,6 +29,8 @@
         <!-- Custom Theme -->
         <!-- TODO: fix this script so we can get the scrollspy and sticky header to work again -->
         <!--<script defer src="js/ictgj-2017-feb.js"></script>-->
+        <script src="js/countdown-timer.js"></script>
+        <script src="js/character-select.js"></script>
 
         <!-- Minigame -->
         <!--<script src="minigame/lib/phaser.min.js"></script>-->
@@ -57,20 +59,20 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand page-scroll" href="#page-top">
-                        <span><span style="font-weight: bold;"><span class="text-secondary">ICT</span><span style="color: #337ab7;">GAMEJAM</span><span class="text-secondary">.COM</span></span>&nbsp;July 18 - 20, 2025</span>
-                        <!-- TODO: countdown timer to game jam start -->
+                            <span><span style="font-weight: bold;"><span class="text-secondary">ICT</span><span style="color: #337ab7;">GAMEJAM</span><span class="text-secondary">.COM</span></span>&nbsp;July 18 - 20, 2025</span>
+                            <p id="countdown-timer">How much longer until ICT Game Jam?</p>
                         </a>
                     </div>
                 
                     <!-- Links to external sites -->
                     <div class="col">
                         <ul class="social-buttons">
-                            <li><a href="https://twitter.com/ICTGameJam"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.facebook.com/developerict"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://bsky.app/profile/ictgamejam.bsky.social"><i class="fa fa-blusky">B</i></a></li>
-                            <li><a href="https://discord.gg/BUeHYVCQGr"><i class="fa fa-discord">D</i></a></li>
-                            <li><a href="https://devict.slack.com/"><i class="fa fa-slack"></i></a></li>
-                            <li><a data-bs-toggle="collapse" href="#mc_expand" role="button" aria-expanded="false" aria-controls="mc_expand"><i class="fa fa-inbox"></i></a></li>
+                            <li><a href="https://twitter.com/ICTGameJam"><img src="img/icons/twitter-x.svg"/></a></li>
+                            <li><a href="https://www.facebook.com/developerict"><img src="img/icons/facebook.svg"/></a></li>
+                            <li><a href="https://bsky.app/profile/ictgamejam.bsky.social"><img src="img/icons/bluesky.svg"/></a></li>
+                            <li><a href="https://discord.gg/BUeHYVCQGr"><img src="img/icons/discord.svg"/></a></li>
+                            <li><a href="https://devict.slack.com/"><img src="img/icons/slack.svg"/></a></li>
+                            <li><a data-bs-toggle="collapse" href="#mc_expand" role="button" aria-expanded="false" aria-controls="mc_expand"><img src="img/icons/envelope-plus-fill.svg"/></a></li>
                         </ul>
                     </div>
                 </div>
@@ -154,19 +156,21 @@
         
         <!-- Hero -->
         <header>
-        <div class="container">
-            <div class="intro-text">
-                <a href="#section-info" class="page-scroll btn btn-xl" style="color:white;">What's a game jam?</a>
-            <a href="#section-register" class="page-scroll btn btn-xl" style="color:white;">Buy a Ticket Now</a>
+            <div id="header-image-container" class="container">
+                <div class="intro-text">
+                </div>
             </div>
-        </div>
+            <div class="header-buttons">
+                <a href="#section-info" class="page-scroll btn btn-xl" style="color:white;">What's a game jam?</a>
+                <a href="#section-register" class="page-scroll btn btn-xl" style="color:white;">Buy a Ticket Now</a>
+            </div>
         </header>
         <div id="mobile-header" class="container text-center">
             <img src="img/header-bg-cropped.jpg" style="width: 100%;"/>
             <a href="#event" class="page-scroll btn btn-xl" id="mobile-what-is-a-game-jam-button" style="color:white;">What's a game jam?</a>
         </div>
+   
     
-
         <section id="section-info">
             <div class="container">
                 <div class="row">
@@ -217,6 +221,7 @@
                 </div>
             </div>
         </section>
+        <hr/>
     
         <section id="section-schedule">
             <div class="container">
@@ -263,13 +268,14 @@
                 </div>
 
                 <div class="row justify-content-center text-center">
-                    <div class="col-1">
+                    <div class="col-2">
                         <h3>After that?</h3>
                         <h5>Keep<br>making<br>games!</h5>
                     </div>
                 </div>
             </div>
         </section>
+        <hr/>
 
         <section id="section-location">
             <div class="row">
@@ -285,6 +291,7 @@
                 </div>
               </div>
         </section>
+        <hr/>
 
         <section id="section-register">
              <div class="container">
@@ -309,11 +316,12 @@
               </div>
             </div>
         </section>
+        <hr/>
 
         <section id="section-previous">
             <div class="container">
                 <div class="row text-center">
-                  <h1>Enjoy some photos from our previous events!</h3>
+                  <h1>Enjoy some photos from our previous events!</h1>
                 </div>
                 <div class="row justify-content-center">
                     <div id="previousJamPhotosCarousel" class="carousel slide" data-ride="carousel">
@@ -363,17 +371,37 @@
                 </div>
             </div>
         </section>
+        <hr/>
 
         <section id="section-devict">
-            <!-- TODO: flesh this out more -->
-            <div class="row justify-content-md-center">
-                <div class="col-2">
-                    <a href="https://devict.org">
-                        <img src="img/logos/devict_logo_260.png" class="img-responsive img-centered" alt="devICT">
-                    </a>
+            <div class="container">
+                <div class="row text-center justify-content-center">
+                    <h1>Meet the ICT Game Jam team!</h1>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-9">
+                        <img id="character-select" src="img/characters/Brian.webp" alt="Brian Foster" class="d-block w-100">
+                            <div style="position: absolute; top: 32%; left: 48%" class="character-select-target" onmouseover="changeCharacter('Brian')"></div>
+                            <div style="position: absolute; top: 50%; left: 48%" class="character-select-target" onmouseover="changeCharacter('Christen')"></div>
+                            <div style="position: absolute; top: 52%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Jack')"></div>
+                            <div style="position: absolute; top: 20%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Julian')"></div>
+                            <div style="position: absolute; top: 36%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Kenny')"></div>
+                        <img/>
+                    </div>
+                </div>
+                <div class="row text-center justify-content-center" style="margin-bottom: -80px;">
+                    <h4>ICT Game Jam is brought to you by devICT!</h4>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-2" style="display: flex; justify-content: center;">
+                        <a href="https://devict.org">
+                            <img src="img/logos/devict_logo_260.png" class="img-responsive img-centered" alt="devICT">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
+        <hr/>
 
         <section id="section-support">
             <div class="container">
@@ -428,6 +456,12 @@
                     <div class="col-md-3 col-sm-6 align-content-center">
                         <a href="https://www.netapp.com/company/" style="align-content: center;">
                             <img src="img/logos/netapp-logo-240.webp" class="img-responsive img-centered" alt="Net App">
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 align-content-center">
+                        <a href="https://www.wichita.edu/industry_and_defense/NIAR/" style="align-content: center;">
+                            <img src="img/logos/niar-logo-240.webp" class="img-responsive img-centered" alt="National Institute for Aviation Research">
                         </a>
                     </div>
                 </div>
