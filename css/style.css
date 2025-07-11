@@ -963,15 +963,11 @@ section ul {
 
  .carousel-control-prev, .carousel-control-next {
     filter: invert(1);
-    background-color: black;
-    opacity: 99%;
-    height: 120%;
-    width: 5%;
  }
 
  .character-select-target {
     width: 13%;
-    height: 10%;
+    height: 15%;
  }
 
  hr {
