@@ -178,6 +178,8 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default {
     border-color: transparent;
     background-color: #EFEFEF;
+    justify-content: center;
+    align-items: start;
 }
 
 .navbar-default .navbar-brand {
@@ -188,12 +190,20 @@ fieldset[disabled] .btn-xl.active {
 
 #mobile-header {
     display: none;
+    padding-top: 4rem;
 }
+
+
+ .nav {
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+ }
 
 @media(max-width:440px) {
     .navbar-default .navbar-brand {
         width: 300px;
-        margin-bottom: 15px;
+        margin-bottom: -3rem;
+        margin-top: -4rem;
     }
     .navbar-fixed-top {
         position: unset;
@@ -206,10 +216,23 @@ fieldset[disabled] .btn-xl.active {
     #mobile-header {
         display: block;
     }
+    
+    .nav {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: .4rem;
+    }
+
 }
 
-#mobile-what-is-a-game-jam-button {
+#mobile-what-is-a-game-jam-button, #mobile-buy-a-ticket-button {
     margin-top: 10px;
+}
+
+#mobile-buy-a-ticket-button {
     margin-bottom: -65px;
 }
 
@@ -251,6 +274,11 @@ fieldset[disabled] .btn-xl.active {
     color: #707070;
 }
 
+.navbar-default .nav li a.active {
+    color: #111111;
+    background-color: #b3b3b3;
+}
+
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
@@ -273,7 +301,7 @@ fieldset[disabled] .btn-xl.active {
     .navbar-default {
         padding: 25px 0;
         border: 0;
-        background-color: transparent;
+        background-color: #EFEFEF;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -301,7 +329,7 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
-header {
+header #header-image-container {
     color: #707070;
     background-attachment: scroll;
     background-image: url(../img/header-bg.jpg);
@@ -311,10 +339,21 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    min-width: 100%;
+    padding-top: 300px;
+}
+
+header .header-buttons {
+    display: flex; 
+    justify-content: center; 
+    gap: 1rem; 
+    margin-top: 1rem; 
+    margin-right: 25%;
+    padding-bottom: 1rem;
 }
 
 header .intro-text {
-    padding-top: 100px;
+    padding-top: 500px;
     padding-bottom: 50px;
 }
 
@@ -378,12 +417,6 @@ section h3.section-subheading {
     font-style: italic;
     font-weight: 400;
     line-height: 1.5em;
-}
-
-@media(min-width:768px) {
-    section {
-        padding: 150px 0;
-    }
 }
 
 .service-heading {
@@ -783,10 +816,10 @@ footer ul.quicklinks {
 }
 
 ul.social-buttons {
-    padding-top: 2.5rem;
     margin-bottom: 0;
     display: flex;
     list-style: none;
+    padding-top: 0.5rem;
 }
 
 ul.social-buttons li {
@@ -796,25 +829,24 @@ ul.social-buttons li {
 
 ul.social-buttons li a {
     display: block;
-    width: 40px;
-    height: 40px;
     border-radius: 100%;
-    font-size: 20px;
-    line-height: 40px;
     outline: 0;
     color: #ffffff;
-    background-color: #222;
+    background-color: white;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
-    padding-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #111111;
+    background-color: lightgrey;
 }
+
+
 
 .btn:focus,
 .btn:active,
@@ -943,4 +975,28 @@ section ul {
  .carousel {
    width:960px;
    height:640px;
+ }
+
+ .carousel-inner > .carousel-item > img {
+    margin: auto;
+    object-fit: contain;
+    justify-self: center;
+ }
+
+ .carousel-control-prev, .carousel-control-next {
+    filter: invert(1);
+ }
+
+ .character-select-target {
+    width: 13%;
+    height: 15%;
+ }
+
+ hr {
+    padding-top: 3rem;
+ }
+
+ .sponsorship-handout {
+    border: 1px solid #111111;
+    box-shadow: 2px 2px;
  }
