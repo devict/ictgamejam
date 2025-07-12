@@ -178,6 +178,8 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default {
     border-color: transparent;
     background-color: #EFEFEF;
+    justify-content: center;
+    align-content: center;
 }
 
 .navbar-default .navbar-brand {
@@ -251,6 +253,11 @@ fieldset[disabled] .btn-xl.active {
     color: #707070;
 }
 
+.navbar-default .nav li a.active {
+    color: #111111;
+    background-color: #b3b3b3;
+}
+
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
@@ -273,7 +280,7 @@ fieldset[disabled] .btn-xl.active {
     .navbar-default {
         padding: 25px 0;
         border: 0;
-        background-color: transparent;
+        background-color: #EFEFEF;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -312,6 +319,7 @@ header #header-image-container {
     background-size: cover;
     -o-background-size: cover;
     min-width: 100%;
+    padding-top: 300px;
 }
 
 header .header-buttons {
@@ -388,12 +396,6 @@ section h3.section-subheading {
     font-style: italic;
     font-weight: 400;
     line-height: 1.5em;
-}
-
-@media(min-width:768px) {
-    section {
-        padding: 150px 0;
-    }
 }
 
 .service-heading {
@@ -793,7 +795,6 @@ footer ul.quicklinks {
 }
 
 ul.social-buttons {
-    padding-top: 2.5rem;
     margin-bottom: 0;
     display: flex;
     list-style: none;
