@@ -180,8 +180,13 @@ fieldset[disabled] .btn-xl.active {
     background-color: #EFEFEF;
     justify-content: center;
     align-content: center;
-    padding-top: 0px;
 }
+
+@media (max-width: 575.98px) {
+    .navbar-default {
+        margin-top: -1.5rem;
+    }
+ }
 
 .navbar-default .navbar-brand {
     font-family: "PT Sans Narrow","Helvetica Neue",Helvetica,Arial;
