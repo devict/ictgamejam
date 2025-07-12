@@ -182,12 +182,6 @@ fieldset[disabled] .btn-xl.active {
     align-items: start;
 }
 
-@media (max-width: 575.98px) {
-    .navbar-default {
-        margin-top: -1.5rem;
-    }
- }
-
 .navbar-default .navbar-brand {
     font-family: "PT Sans Narrow","Helvetica Neue",Helvetica,Arial;
     color: #111111;
@@ -196,12 +190,20 @@ fieldset[disabled] .btn-xl.active {
 
 #mobile-header {
     display: none;
+    padding-top: 4rem;
 }
+
+
+ .nav {
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+ }
 
 @media(max-width:440px) {
     .navbar-default .navbar-brand {
         width: 300px;
-        margin-bottom: 15px;
+        margin-bottom: -3rem;
+        margin-top: -4rem;
     }
     .navbar-fixed-top {
         position: unset;
@@ -214,6 +216,16 @@ fieldset[disabled] .btn-xl.active {
     #mobile-header {
         display: block;
     }
+    
+    .nav {
+        padding: 0px;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: .4rem;
+    }
+
 }
 
 #mobile-what-is-a-game-jam-button {
@@ -979,9 +991,4 @@ section ul {
 
  hr {
     padding-top: 3rem;
- }
-
- .nav {
-    padding-top: 0.5rem;
-    padding-left: 0.5rem;
  }
