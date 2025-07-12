@@ -179,7 +179,7 @@ fieldset[disabled] .btn-xl.active {
     border-color: transparent;
     background-color: #EFEFEF;
     justify-content: center;
-    align-content: center;
+    align-items: start;
 }
 
 @media (max-width: 575.98px) {
@@ -804,7 +804,7 @@ ul.social-buttons {
     margin-bottom: 0;
     display: flex;
     list-style: none;
-    align-items: center;
+    padding-top: 0.5rem;
 }
 
 ul.social-buttons li {
@@ -979,4 +979,9 @@ section ul {
 
  hr {
     padding-top: 3rem;
+ }
+
+ .nav {
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
  }
