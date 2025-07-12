@@ -228,8 +228,11 @@ fieldset[disabled] .btn-xl.active {
 
 }
 
-#mobile-what-is-a-game-jam-button {
+#mobile-what-is-a-game-jam-button, #mobile-buy-a-ticket-button {
     margin-top: 10px;
+}
+
+#mobile-buy-a-ticket-button {
     margin-bottom: -65px;
 }
 
@@ -991,4 +994,9 @@ section ul {
 
  hr {
     padding-top: 3rem;
+ }
+
+ .sponsorship-handout {
+    border: 1px solid #111111;
+    box-shadow: 2px 2px;
  }
