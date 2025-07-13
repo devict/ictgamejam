@@ -225,7 +225,7 @@ section ul {
 }
 
 section {
-    padding-top: 150px;
+    padding-top: 200px;
 }
 
 section h2.section-heading {
@@ -622,5 +622,9 @@ header .intro-text .intro-heading {
 
     #mobile-header {
         display: block;
+    }
+
+    section {
+        padding-top: 150px;
     }
 }
