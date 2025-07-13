@@ -89,9 +89,8 @@
         </style>
 
     </head>
-    
-    <body class="index" style="height: 100%; position: relative; overflow-y: scroll !important;" data-spy="scroll" data-target="#navbar" data-offset="0">
-        <nav id="navbar" class="navbar navbar-default fixed-top">               
+
+    <nav id="navbar" class="navbar navbar-default fixed-top">               
             <!-- Navigation for the website's content  -->
             <a class="navbar-brand" href="#page-top"><!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -111,6 +110,9 @@
                 <li class="default-mailchimp"><a data-toggle="modal" data-target="#mc_modal" role="button" aria-expanded="false" aria-controls="mc_expand"><img src="img/icons/envelope-plus-fill.svg"/></a></li>
             </ul>
             <ul class="nav">
+                <li class="nav-item" hidden>
+                    <a class="btn-sm nav-link" href="#page-top">Top</a>
+                </li>
                 <li class="nav-item">
                     <a class="btn-sm nav-link" href="#section-info">About</a>
                 </li>
@@ -138,6 +140,10 @@
                 <span>YO-GABBA_GABBA</span>
             </div>-->
         </nav>
+    
+    <body class="index" style="height: 100%; position: relative; overflow-y: scroll !important;" data-spy="scroll" data-target="#navbar" data-offset="0">
+        
+        
    
 
         <!-- Hero -->
@@ -213,7 +219,7 @@
         <hr/>
     
         <section id="section-schedule">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading">Schedule</h2>
@@ -222,44 +228,54 @@
                 </div>
 
                 <div class="row justify-content-center pb-4">
-                <div class="col-lg-3">
-                    <img class="img-circle img-responsive" src="img/schedule/1.jpg" alt="">
-                </div>
-                <div class="col-lg-7">
-                    <h4>Friday</h4>
-                    <h5 class="subheading">Kickoff!</h5>
-                    <p class="text-muted">Doors open at 6pm, kickoff slides and intro start at 7pm.  Participants will receive an email to vote on the game jam&rsquo;s theme.  Those needing teams will have an opportunity to pitch ideas and form or join teams as necessary.  You can even work solo if you want.  Three people are ideal, and we prefer teams to stay below 5.  <strong>Then it&rsquo;s time to start making games!</strong>  Work as long as you can, while staying healthy and safe!  Overnight work is permitted, but we send people home around midnight.</p>
-                </div>
+                    <div class="col-lg-3">
+                        <img class="img-circle img-responsive" src="img/schedule/rocket-launch.webp" alt="">
+                    </div>
+                    <div class="col-lg-7">
+                        <h4>Friday</h4>
+                        <h5 class="subheading">Kickoff!</h5>
+                        <p class="text-muted">Doors open at 6pm, kickoff slides and intro start at 7pm.  Participants will receive an email to vote on the game jam&rsquo;s theme.  Those needing teams will have an opportunity to pitch ideas and form or join teams as necessary.  You can even work solo if you want.  Three people are ideal, and we prefer teams to stay below 5.  <strong>Then it&rsquo;s time to start making games!</strong>  Work as long as you can, while staying healthy and safe!  Overnight work is permitted, but we send people home around midnight.</p>
+                    </div> 
                 </div>
 
                 <div class="row justify-content-center pb-4">
+                    <div class="col-lg-3 mobile-schedule-image">
+                        <img class="img-circle img-responsive" src="img/schedule/developer.webp" alt="">
+                    </div>
                     <div class="col-lg-7">
                         <h4>Saturday</h4>
                         <h5 class="subheading">Build Day!</h5>
                         <p class="text-muted">Show up in the morning.  Enjoy refreshments, meals and &hellip; oh yeah&hellip; build a game!  Hit a wall?  Ask for help!  Lean on the volunteers and fellow game devs for feedback and encouragement!  Same closing rules as Friday!</p>
                     </div>
-                    <div class="col-lg-3">
-                        <img class="img-circle img-responsive" src="img/schedule/2.jpg" alt="">
+                    <div class="col-lg-3 default-schedule-image">
+                        <img class="img-circle img-responsive" src="img/schedule/developer.webp" alt="">
                     </div>
                 </div>
 
                 <div class="row justify-content-center pb-4">
                     <div class="col-lg-3">
-                        <img class="img-circle img-responsive" src="img/schedule/3.jpg" alt="">
+                        <img class="img-circle img-responsive" src="img/schedule/ship.webp" alt="">
                     </div>
                     <div class="col-lg-7">
                         <h4>Sunday</h4>
                         <h5 class="subheading">Polish, SHIP IT!!  Winners announced!</h5>
                         <p class="text-muted">Arrive in the morning to put the finishing touches on your game.  Work stops, lunch begins at 12pm.  Developers will vote during/after lunch.  Winners announced once all the votes are in and tallied.</p>
                         <h5 class="subheading">Community Play</h5>
-                        <p class="text-muted">At 2pm have Friends and Family come play your games!</p>
+                        <p class="text-muted">At 1pm have Friends and Family come play your games!</p>
                     </div>
                 </div>
 
-                <div class="row justify-content-center text-center">
-                    <div class="col-2">
-                        <h3>After that?</h3>
-                        <h5>Keep<br>making<br>games!</h5>
+                <div class="row justify-content-center pb-4">
+                    <div class="col-lg-3 mobile-schedule-image">
+                        <img class="img-circle img-responsive" src="img/schedule/coop.webp" alt="">
+                    </div>
+                    <div class="col-lg-7">
+                        <h4>After that?</h4>
+                        <h5 class="subheading">Keep making (and playing) games!</h5>
+                        <p class="text-muted">Join our <a href="https://discord.gg/BUeHYVCQGr">Discord Server</a> to tell us what you're working on and hear what other are up to. Also consider joing the <a href="https://devict.slack.com/">devICT Slack Channel</a> for discussions on more varied topics with software developers in the Wichita area!</p>
+                    </div>
+                    <div class="col-lg-3 default-schedule-image">
+                        <img class="img-circle img-responsive" src="img/schedule/coop.webp" alt="">
                     </div>
                 </div>
             </div>
