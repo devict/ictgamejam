@@ -422,10 +422,6 @@ header .intro-text .intro-heading {
     margin-bottom: -65px;
 }
 
-.mobile-schedule-image {
-    display: none;
-}
-
 .carousel {
     width:960px;
     height:640px;
@@ -624,13 +620,5 @@ header .intro-text .intro-heading {
 
     #mobile-header {
         display: block;
-    }
-
-    .mobile-schedule-image {
-        display: block;
-    }
-
-    .default-schedule-image {
-        display: none;
     }
 }
