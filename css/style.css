@@ -4,12 +4,31 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     overflow: auto;
     overflow-x: hidden;
     overflow-y: scroll !important;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     webkit-tap-highlight-color: #111111;
+}
+
+/* Minigame container */
+#gameContainer {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 416px;
+    height: 248px;
+    top: -5.2em;
+}
+
+.gameContainerContainer {
+    width: 100%;
+    position: absolute;
 }
 
 .text-muted {
@@ -176,36 +195,6 @@ fieldset[disabled] .btn-xl.active {
     background-color: #707070;
 }
 
-section {
-    padding: 10rem 0;
-}
-
-section h2.section-heading {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 40px;
-    color: #4c6069;
-}
-
-section h3.section-subheading {
-    margin-bottom: 75px;
-    text-transform: none;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 1.5em;
-}
-
-.service-heading {
-    margin: 15px 0;
-    text-transform: none;
-}
-
-aside.sponsors img {
-    margin: 50px auto;
-}
-
 .btn:focus,
 .btn:active,
 .btn.active,
@@ -235,23 +224,34 @@ section ul {
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-/* Minigame container */
-#gameContainer {
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
-    width: 416px;
-    height: 248px;
-    top: -5.2em;
+section {
+    padding-top: 150px;
 }
 
-.gameContainerContainer {
-    width: 100%;
-    position: absolute;
+section h2.section-heading {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+    color: #4c6069;
 }
 
-hr {
-    padding-top: 3rem;
+section h3.section-subheading {
+    margin-bottom: 75px;
+    text-transform: none;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+.service-heading {
+    margin: 15px 0;
+    text-transform: none;
+}
+
+aside.sponsors img {
+    margin: 50px auto;
 }
 
 .navbar-default {
@@ -384,7 +384,7 @@ header .header-buttons {
     gap: 1rem; 
     margin-top: 1rem; 
     margin-right: 25%;
-    padding-bottom: 1rem;
+    padding-bottom: 5rem;
 }
 
 header .intro-text {
@@ -412,6 +412,7 @@ header .intro-text .intro-heading {
 #mobile-header {
     display: none;
     padding-top: 4rem;
+    padding-bottom: 5rem;
 }
 
 #mobile-what-is-a-game-jam-button, #mobile-buy-a-ticket-button {
@@ -605,7 +606,8 @@ header .intro-text .intro-heading {
     }
 
     .nav-link {
-        font-size: .4rem;
+        font-size: .6rem;
+        padding: .2rem .4rem;
     }
 
     ul.social-buttons {
