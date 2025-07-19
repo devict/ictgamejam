@@ -417,6 +417,7 @@ header .intro-text .intro-heading {
 .header-splash {
     display: inline;
     text-wrap: auto;
+    color: red;
 }
 
 #mobile-header {
@@ -596,7 +597,7 @@ header .intro-text .intro-heading {
     }
 }
 
-@media(max-width:576px) {
+@media(max-width:992px) {
     .navbar {
         justify-content: start;
     }
