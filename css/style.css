@@ -143,6 +143,10 @@ fieldset[disabled] .btn-primary.active {
     background-color: #707070;
 }
 
+.btn-info {
+    margin-top: 1rem;
+}
+
 .btn-xl {
     padding: 20px 40px;
     border-color: #111111;
@@ -409,6 +413,17 @@ header .intro-text .intro-heading {
     line-height: 50px;
 }
 
+#countdown-timer {
+    display: inline;
+    font-weight: bold;
+}
+
+.header-splash {
+    display: inline;
+    text-wrap: auto;
+    color: red;
+}
+
 #mobile-header {
     display: none;
     padding-top: 4rem;
@@ -586,13 +601,13 @@ header .intro-text .intro-heading {
     }
 }
 
-@media(max-width:440px) {
+@media(max-width:992px) {
     .navbar {
         justify-content: start;
     }
 
     .navbar-default .navbar-brand {
-        width: 300px;
+        max-width: 500px;
         margin-bottom: -3rem;
         margin-top: -4rem;
     }
