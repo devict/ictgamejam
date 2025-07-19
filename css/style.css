@@ -409,6 +409,16 @@ header .intro-text .intro-heading {
     line-height: 50px;
 }
 
+#countdown-timer {
+    display: inline;
+    font-weight: bold;
+}
+
+.header-splash {
+    display: inline;
+    text-wrap: auto;
+}
+
 #mobile-header {
     display: none;
     padding-top: 4rem;
@@ -586,13 +596,13 @@ header .intro-text .intro-heading {
     }
 }
 
-@media(max-width:440px) {
+@media(max-width:576px) {
     .navbar {
         justify-content: start;
     }
 
     .navbar-default .navbar-brand {
-        width: 300px;
+        max-width: 500px;
         margin-bottom: -3rem;
         margin-top: -4rem;
     }
