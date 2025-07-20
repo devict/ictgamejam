@@ -268,7 +268,7 @@ aside.sponsors img {
 .navbar-default .navbar-brand {
     font-family: "PT Sans Narrow","Helvetica Neue",Helvetica,Arial;
     color: #111111;
-    margin-bottom: 6px;
+    padding-bottom: 0px;
 }
 
 .navbar-default .navbar-brand img {
@@ -341,7 +341,7 @@ ul.social-buttons {
     margin-bottom: 0;
     display: flex;
     list-style: none;
-    padding-top: 0.5rem;
+    align-self: center;
 }
 
 ul.social-buttons li {
@@ -418,7 +418,7 @@ header .intro-text .intro-heading {
     font-weight: bold;
 }
 
-.header-splash {
+.header-splash-message {
     display: inline;
     text-wrap: auto;
     color: red;
@@ -464,7 +464,7 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     .navbar-default {
-        padding: 25px 0;
+        padding: 25px 25px;
         border: 0;
         background-color: #EFEFEF;
         -webkit-transition: padding .3s;
@@ -604,12 +604,12 @@ header .intro-text .intro-heading {
 @media(max-width:992px) {
     .navbar {
         justify-content: start;
+        margin-bottom: -3rem;
+        margin-top: -1rem;
     }
 
     .navbar-default .navbar-brand {
         max-width: 500px;
-        margin-bottom: -3rem;
-        margin-top: -4rem;
     }
     .navbar-fixed-top {
         position: unset;
