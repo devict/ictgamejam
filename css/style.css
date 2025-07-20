@@ -268,7 +268,7 @@ aside.sponsors img {
 .navbar-default .navbar-brand {
     font-family: "PT Sans Narrow","Helvetica Neue",Helvetica,Arial;
     color: #111111;
-    margin-bottom: 6px;
+    padding-bottom: 0px;
 }
 
 .navbar-default .navbar-brand img {
@@ -278,6 +278,7 @@ aside.sponsors img {
 .nav {
     padding-top: 0.5rem;
     padding-left: 0.5rem;
+    align-self: center;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -341,7 +342,8 @@ ul.social-buttons {
     margin-bottom: 0;
     display: flex;
     list-style: none;
-    padding-top: 0.5rem;
+    align-self: center;
+    padding-right: 2rem;
 }
 
 ul.social-buttons li {
@@ -419,6 +421,10 @@ header .intro-text .intro-heading {
 }
 
 .header-splash {
+    align-self: center;
+}
+
+.header-splash-message {
     display: inline;
     text-wrap: auto;
     color: red;
@@ -464,7 +470,6 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     .navbar-default {
-        padding: 25px 0;
         border: 0;
         background-color: #EFEFEF;
         -webkit-transition: padding .3s;
@@ -552,6 +557,10 @@ header .intro-text .intro-heading {
 }
 
 @media(min-width:992px) {
+    .navbar {
+        padding: 25px 25px;
+    }
+    
     .timeline>li {
         min-height: 150px;
     }
@@ -604,12 +613,13 @@ header .intro-text .intro-heading {
 @media(max-width:992px) {
     .navbar {
         justify-content: start;
+        margin-bottom: -3rem;
+        margin-top: -1rem;
+        padding: 25px 25px 0px;
     }
 
     .navbar-default .navbar-brand {
         max-width: 500px;
-        margin-bottom: -3rem;
-        margin-top: -4rem;
     }
     .navbar-fixed-top {
         position: unset;
@@ -641,5 +651,9 @@ header .intro-text .intro-heading {
 
     section {
         padding-top: 150px;
+    }
+    
+    .sponsor-logo {
+        padding-bottom: 1rem;
     }
 }
