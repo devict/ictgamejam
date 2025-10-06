@@ -449,14 +449,14 @@ header .intro-text .intro-heading {
     height:640px;
 }
 
+.carousel-inner {
+    height: 100%;
+}
+
 .carousel-inner > .carousel-item > img {
     margin: auto;
     object-fit: contain;
     justify-self: center;
-}
-
-.carousel-control-prev, .carousel-control-next {
-    filter: invert(1);
 }
 
 .character-select-target {
