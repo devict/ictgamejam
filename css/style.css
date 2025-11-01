@@ -455,7 +455,7 @@ header .intro-text .intro-heading {
 
 .carousel-inner > .carousel-item > img {
     margin: auto;
-    object-fit: contain;
+    object-fit: cover;
     justify-self: center;
 }
 
