@@ -373,7 +373,7 @@ ul.social-buttons li a:active {
 header #header-image-container {
     color: #707070;
     background-attachment: scroll;
-    background-image: url(../img/header-bg.jpg);
+    background-image: url(../img/header-bg.png);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -381,7 +381,6 @@ header #header-image-container {
     background-size: cover;
     -o-background-size: cover;
     min-width: 100%;
-    padding-top: 300px;
 }
 
 header .header-buttons {
