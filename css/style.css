@@ -344,6 +344,7 @@ ul.social-buttons {
     list-style: none;
     align-self: center;
     padding-right: 2rem;
+    max-height: 5rem;
 }
 
 ul.social-buttons li {
@@ -454,7 +455,7 @@ header .intro-text .intro-heading {
 
 .carousel-inner > .carousel-item > img {
     margin: auto;
-    object-fit: contain;
+    object-fit: cover;
     justify-self: center;
 }
 

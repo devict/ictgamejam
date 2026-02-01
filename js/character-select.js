@@ -10,6 +10,9 @@ function changeCharacter(name) {
         case 'Jack':
             newSource = 'img/characters/Jack.webp';
             break;
+        case 'Jarvis':
+            newSource = 'img/characters/Jarvis.webp';
+            break;
         case 'Julian':
             newSource = 'img/characters/Julian.webp';
             break;
@@ -17,7 +20,7 @@ function changeCharacter(name) {
             newSource = 'img/characters/Kenny.webp';
             break;
         default:
-            newSource = 'img/characters/Brian.webp';
+            newSource = 'img/characters/Noone.webp';
     }
     document.getElementById('character-select').src = newSource;
 }
