@@ -469,8 +469,8 @@ header .intro-text .intro-heading {
 }
 
 #livestreamPlayer {
-    height: 720;
-    width: 1280;
+    height: 720px;
+    width: 1280px;
 }
 
 /* Styling for views larger than 768px (md and up) */
@@ -585,7 +585,7 @@ header .intro-text .intro-heading {
     }
 
     #livestreamPlayer {
-        height: 360;
-        width: 640;
+        height: 360px;
+        width: 640px;
     }
 }
