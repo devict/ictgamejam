@@ -522,17 +522,7 @@ header .intro-text .intro-heading {
     }
 
     section {
-        padding-top: 200px;
-    }
-
-    .carousel {
-        width:960px;
-        height:640px;
-    }
-
-    #livestreamPlayer {
-        height: 720px;
-        width: 1280px;
+        padding-top: 125px;
     }
 }
 
@@ -577,7 +567,7 @@ header .intro-text .intro-heading {
     }
 
     section {
-        padding-top: 0px;
+        padding-top: 125px;
     }
     
     .sponsor-logo {
