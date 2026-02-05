@@ -444,7 +444,7 @@ header .intro-text .intro-heading {
     margin-bottom: -65px;
 }
 
-.carousel {
+.carousel, #livestreamPlayer {
     width: 80%;
     height: 45%;
 }
@@ -466,11 +466,6 @@ header .intro-text .intro-heading {
 .sponsorship-handout {
     border: 1px solid #111111;
     box-shadow: 2px 2px;
-}
-
-#livestreamPlayer {
-    height: 720px;
-    width: 1280px;
 }
 
 /* Styling for views larger than 768px (md and up) */
@@ -534,6 +529,11 @@ header .intro-text .intro-heading {
         width:960px;
         height:640px;
     }
+
+    #livestreamPlayer {
+        height: 720px;
+        width: 1280px;
+    }
 }
 
 /* Styling for views smaller than 576px (mobile devices) */
@@ -582,10 +582,5 @@ header .intro-text .intro-heading {
     
     .sponsor-logo {
         padding-bottom: 1rem;
-    }
-
-    #livestreamPlayer {
-        height: 360px;
-        width: 640px;
     }
 }
