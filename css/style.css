@@ -444,7 +444,7 @@ header .intro-text .intro-heading {
     margin-bottom: -65px;
 }
 
-.carousel, #livestreamPlayer {
+.carousel {
     width: 80%;
     height: 45%;
 }
@@ -466,6 +466,11 @@ header .intro-text .intro-heading {
 .sponsorship-handout {
     border: 1px solid #111111;
     box-shadow: 2px 2px;
+}
+
+#livestreamPlayer {
+    width: 80%;
+    height: 480px;
 }
 
 /* Styling for views larger than 768px (md and up) */
@@ -572,5 +577,10 @@ header .intro-text .intro-heading {
     
     .sponsor-logo {
         padding-bottom: 1rem;
+    }
+
+    #livestreamPlayer {
+        width: 80%;
+        height: 45%;
     }
 }
