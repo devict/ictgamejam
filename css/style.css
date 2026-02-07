@@ -541,7 +541,7 @@ header .intro-text .intro-heading {
     }
 
     .navbar-default .navbar-brand {
-        max-width: 500px;
+        max-width: 100vw;
     }
     .navbar-fixed-top {
         position: unset;
