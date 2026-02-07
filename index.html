@@ -164,7 +164,9 @@
                 </div>
             </div>
         </section>
-        <hr/>
+        
+        <br/><br/><hr/>
+        
         <section id="section-schedule">
             <div class="container">
                 <div class="row">
@@ -175,10 +177,10 @@
                 </div>
 
                 <div class="row justify-content-center pb-4">
-                    <div class="col-lg-3">
+                    <div class="col-sm col-lg-3 align-content-center">
                         <img class="img-circle img-responsive" src="img/schedule/rocket-launch.webp" alt="">
                     </div>
-                    <div class="col-lg-7">
+                    <div class="col-sm col-lg-7">
                         <h4>Friday</h4>
                         <h5 class="subheading">Kickoff!</h5>
                         <p class="text-muted">Doors open at 11am and the event starts at noon!  There will be a small "hi, glad you're here, this is the theme" talk, with the main kickoff event happening at 6pm. Those needing teams will have an opportunity to pitch ideas and form or join teams as necessary.  You can even work solo if you want.  Three people are ideal, and we prefer teams to stay below 5.  <strong>Then it&rsquo;s time to start making games!</strong>  Work as long as you can, while staying healthy and safe!  You're welcome to work through the night, but we send people home around midnight.</p>
@@ -186,24 +188,26 @@
                 </div>
 
                 <div class="row justify-content-center pb-4">
-                    <div class="col-lg-3 d-block d-lg-none">
+                    <!-- Leverage bootstrap breakpoints to show the image on the left (above) when at XS breakpoint and hide that image when at any larger breakpoint -->
+                    <div class="col-sm col-lg-3 d-block d-sm-none align-content-center">
                         <img class="img-circle img-responsive" src="img/schedule/developer.webp" alt="">
                     </div>
-                    <div class="col-lg-7">
+                    <div class="col-sm col-lg-7">
                         <h4>Saturday</h4>
                         <h5 class="subheading">Build Day!</h5>
                         <p class="text-muted">Show up in the morning.  Enjoy refreshments, meals and &hellip; oh yeah&hellip; build a game!  Hit a wall?  Ask for help!  Lean on the volunteers and fellow game devs for feedback and encouragement!  Same closing rules as Friday!</p>
                     </div>
-                    <div class="col-lg-3 d-none d-lg-block">
+                    <!-- Leverage bootstrap breakpoints to hide the image on the right when at XS breakpoint and show that image when at any larger breakpoint -->
+                    <div class="col-sm col-lg-3 d-none d-sm-block align-content-center">
                         <img class="img-circle img-responsive" src="img/schedule/developer.webp" alt="">
                     </div>
                 </div>
 
                 <div class="row justify-content-center pb-4">
-                    <div class="col-lg-3">
+                    <div class="col-sm col-lg-3 align-content-center">
                         <img class="img-circle img-responsive" src="img/schedule/ship.webp" alt="">
                     </div>
-                    <div class="col-lg-7">
+                    <div class="col-sm col-lg-7">
                         <h4>Sunday</h4>
                         <h5 class="subheading">Polish, SHIP IT!!  Winners announced!</h5>
                         <p class="text-muted">Arrive in the morning to put the finishing touches on your game.  Work stops, lunch begins at 12pm.  Developers will vote during/after lunch.  Winners announced once all the votes are in and tallied.</p>
@@ -213,21 +217,24 @@
                 </div>
 
                 <div class="row justify-content-center pb-4">
-                    <div class="col-lg-3 d-block d-lg-none">
+                    <!-- More bootstrap magic -->
+                    <div class="col-sm col-lg-3 d-block d-sm-none align-content-center">
                         <img class="img-circle img-responsive" src="img/schedule/coop.webp" alt="">
                     </div>
-                    <div class="col-lg-7">
+                    <div class="col-sm col-lg-7">
                         <h4>After that?</h4>
                         <h5 class="subheading">Keep making (and playing) games!</h5>
                         <p class="text-muted">Join our <a href="https://discord.gg/BUeHYVCQGr">Discord Server</a> to tell us what you're working on and hear what other are up to. Also consider joing the <a href="https://devict.slack.com/">devICT Slack Channel</a> for discussions on more varied topics with software developers in the Wichita area!</p>
                     </div>
-                    <div class="col-lg-3 d-none d-lg-block">
+                    <!-- More bootstrap magic -->
+                    <div class="col-sm col-lg-3 d-none d-sm-block align-content-center">
                         <img class="img-circle img-responsive" src="img/schedule/coop.webp" alt="">
                     </div>
                 </div>
             </div>
         </section>
-        <hr/>
+        
+        <br/><br/><hr/>
 
         <section id="section-location">
             <div class="row">
@@ -243,7 +250,8 @@
                 </div>
             </div>
         </section>
-        <hr/>
+        
+        <br/><br/><hr/>
 
         <section id="section-register">
             <div class="container">
@@ -258,71 +266,123 @@
                 </div>
             </div>
         </section>
-        <hr/>
+        
+        <br/><br/><hr/>
 
+        <!-- 
+        For post-winter updates:
+            * hide the championsContainer element
+            * un-hide the globalGameJamContainer element
+            * update the src and title of the livestreamPlayer element
+            * update the link for the globalGamesLink element
+        For post-summer updates:
+            * hide the globalGameJamContainer element
+            * un-hide the championsContainer element
+            * update the text of the championsHeaderText element
+            * add new photos of winners to img directory
+            * update the titles, img sources, and link detinations for the carousel items
+            * update the link for the ictGamesLink element (if necessary)
+        -->
         <section id="section-previous">
             <div class="container">
-                <div class="row text-center">
-                <h1>Congrats to the winners of ICT Game Jam Summer 2025!</h1>
-                </div>
-                <div class="row justify-content-center">
-                    <div id="currentChampionsCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- TODO: Figure out better way to get the gameplay images to be centered (probably best solved by taking game screenshots myself)-->
-                        <!-- Setting align-content-center causes jitter on the slide transition -->
-                        <div class="carousel-inner align-content-center">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="img/previous/winners/2025_July_1st_place_team_sm.webp" alt="Overbooked by Intestinal Regrets (team)">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>1st Place</h5>
-                                    <a href="https://jaedonwallace13.itch.io/overbooked">Overbooked by Intestinal Regrets</a>
+
+                <!-- Hide this element after the winter game jam; show this element after the summer game jam-->
+                <div id="championsContainer" hidden>
+                    <div class="row text-center">
+                        <h1 id="championsHeaderText">Congrats to the winners of ICT Game Jam Summer 2025!</h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div hidden id="currentChampionsCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- TODO: Figure out better way to get the gameplay images to be centered (probably best solved by taking game screenshots myself)-->
+                            <!-- Setting align-content-center causes jitter on the slide transition -->
+                            <div class="carousel-inner align-content-center">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="img/previous/winners/2025_July_1st_place_team_sm.webp" alt="Overbooked by Intestinal Regrets (team)">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>1st Place</h5>
+                                        <a href="https://jaedonwallace13.itch.io/overbooked">Overbooked by Intestinal Regrets</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="img/previous/winners/2025_July_1st_place_game_sm_c.webp" alt="Overbooked by Intestinal Regrets (gameplay)">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>1st Place</h5>
+                                        <a href="https://jaedonwallace13.itch.io/overbooked">Overbooked</a><p> by Intestinal Regrets</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="img/previous/winners/2025_July_2nd_place_team_sm.webp" alt="Mask Party by Team Josh">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>2nd Place</h5>
+                                        <a href="https://jscholldev.itch.io/mask-party">Mask Party by Team Josh</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="img/previous/winners/2025_July_2nd_place_game_sm.webp" alt="Mask Party by Team Josh">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>2nd Place</h5>
+                                        <a href="https://jscholldev.itch.io/mask-party">Mask Party by Team Josh</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="img/previous/winners/2025_July_3rd_place_team_sm.webp" alt="Masquerade About Secret Killing Society by Quit Da Sleep">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>3rd Place</h5>
+                                        <a href="https://qds.itch.io/masquerade-about-secret-killing-society">Masquerade About Secret Killing Society by Quit Da Sleep</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="img/previous/winners/2025_July_3rd_place_game_sm_c.webp" alt="Masquerade About Secret Killing Society by Quit Da Sleep">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>3rd Place</h5>
+                                        <a href="https://qds.itch.io/masquerade-about-secret-killing-society">Masquerade About Secret Killing Society by Quit Da Sleep</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="img/previous/winners/2025_July_1st_place_game_sm_c.webp" alt="Overbooked by Intestinal Regrets (gameplay)">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>1st Place</h5>
-                                    <a href="https://jaedonwallace13.itch.io/overbooked">Overbooked</a><p> by Intestinal Regrets</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="img/previous/winners/2025_July_2nd_place_team_sm.webp" alt="Mask Party by Team Josh">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>2nd Place</h5>
-                                    <a href="https://jscholldev.itch.io/mask-party">Mask Party by Team Josh</a>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="img/previous/winners/2025_July_2nd_place_game_sm.webp" alt="Mask Party by Team Josh">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>2nd Place</h5>
-                                    <a href="https://jscholldev.itch.io/mask-party">Mask Party by Team Josh</a>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="img/previous/winners/2025_July_3rd_place_team_sm.webp" alt="Masquerade About Secret Killing Society by Quit Da Sleep">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5 style="text">3rd Place</h5>
-                                    <a href="https://qds.itch.io/masquerade-about-secret-killing-society">Masquerade About Secret Killing Society by Quit Da Sleep</a>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="img/previous/winners/2025_July_3rd_place_game_sm_c.webp" alt="Masquerade About Secret Killing Society by Quit Da Sleep">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>3rd Place</h5>
-                                    <a href="https://qds.itch.io/masquerade-about-secret-killing-society">Masquerade About Secret Killing Society by Quit Da Sleep</a>
-                                </div>
-                            </div>
+                            <button class="carousel-control-prev" type="button" data-target="#currentChampionsCarousel" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-target="#currentChampionsCarousel" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>   
+                            </button>       
                         </div>
-                        <button class="carousel-control-prev" type="button" data-target="#currentChampionsCarousel" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-target="#currentChampionsCarousel" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>   
-                        </button>       
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <p>Be sure to also check out all the other games on Itch.io created by our talented particpants!</p>
+                            <a href="https://itch.io/jam/ict-game-jam">ICT Game Jam Games</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Show this element after the winter game jam; hide this element after the summer game jam-->
+                <div id="globalGameJamContainer">
+                    <div class="row text-center">
+                        <h1 id="livestreamHeaderText">Check out the ICT Game Jam portion of the Global Game Jam livestream!</h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <iframe
+                            id="livestreamPlayer"
+                            src="https://www.youtube.com/embed/DDsTxal4jgw?si=gIq6fbtKPwgT0u2z&amp;start=1797"
+                            title="GGJ Live Stream 2026 Sunday"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        >
+                        </iframe>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <p>Don't for get to visit the Global Game Jam website to download and play the games made during the event!</p>
+                            <a id="globalGamesLink" href="https://globalgamejam.org/group/31458/games">Global Game Jam (ICT Game Jam Games)</a>
+                        </div>
+
+                    </div>
+                </div>
+                
                 <br/><br/>
 
                 <div class="row text-center">
@@ -332,49 +392,55 @@
                     <div id="previousJamPhotosCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <img class="d-block w-100" src="img/previous/2025_July_1_sm.webp" alt="July 2025 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2026_Jan_1_sm.webp" alt="January 2026 ICT Game Jam Photo 1">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2025_July_2_sm.webp" alt="July 2025 Game Jam">
+                            <img class="d-block w-100" src="img/previous/2026_Jan_2_sm.webp" alt="January 2026 ICT Game Jam Photo 2">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2025_July_3_sm.webp" alt="July 2025 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2025_July_1_sm.webp" alt="July 2025 ICT Game Jam Photo 1">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2025_July_4_sm.webp" alt="July 2025 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2025_July_2_sm.webp" alt="July 2025 ICT Game Jam Photo 2">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2025_July_5_sm.webp" alt="July 2025 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2025_July_3_sm.webp" alt="July 2025 ICT Game Jam Photo 3">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2023_Feb_1_sm_90.webp" alt="February 2023 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2025_July_4_sm.webp" alt="July 2025 ICT Game Jam Photo 4">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2023_Feb_2_sm_90.webp" alt="February 2023 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2025_July_5_sm.webp" alt="July 2025 ICT Game Jam Photo 5">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2017_Feb_1_sm.webp" alt="February 2017 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2023_Feb_1_sm_90.webp" alt="February 2023 ICT Game Jam Photo 1">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2017_Feb_2_sm.webp" alt="February 2017 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2023_Feb_2_sm_90.webp" alt="February 2023 ICT Game Jam Photo 2">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2017_Feb_3_sm.webp" alt="February 2017 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2017_Feb_1_sm.webp" alt="February 2017 ICT Game Jam Photo 1">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2017_July_1_sm.webp" alt="July 2017 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2017_Feb_2_sm.webp" alt="February 2017 ICT Game Jam Photo 2">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2017_July_2_sm.webp" alt="July 2017 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2017_Feb_3_sm.webp" alt="February 2017 ICT Game Jam Photo 3">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2016_1_sm.webp" alt="2016 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2017_July_1_sm.webp" alt="July 2017 ICT Game Jam Photo 1">
+                            </div>
+                            <div class="carousel-item">
+                            <img class="d-block w-100" src="img/previous/2017_July_2_sm.webp" alt="July 2017 ICT Game Jam Photo 2">
+                            </div>
+                            <div class="carousel-item">
+                            <img class="d-block w-100" src="img/previous/2016_1_sm.webp" alt="2016 ICT Game Jam Photo 1">
                             </div>    
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2015_1_sm.webp" alt="2015 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2015_1_sm.webp" alt="2015 ICT Game Jam Photo 1">
                             </div>
                             <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2015_2_sm.webp" alt="2015 ICT Game Jam">
+                            <img class="d-block w-100" src="img/previous/2015_2_sm.webp" alt="2015 ICT Game Jam Photo 2">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-target="#previousJamPhotosCarousel" data-slide="prev">
@@ -389,7 +455,8 @@
                 </div>
             </div>
         </section>
-        <hr/>
+
+        <br/><br/><hr/>
 
         <section id="section-devict">
             <div class="container">
