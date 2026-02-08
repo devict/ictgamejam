@@ -84,6 +84,9 @@ h6 {
 
 .img-centered {
     margin: 0 auto;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
 }
 
 .bg-light-gray {
@@ -237,6 +240,7 @@ section h2.section-heading {
     margin-bottom: 15px;
     font-size: 40px;
     color: #4c6069;
+    max-width: 90vw;
 }
 
 section h3.section-subheading {
@@ -382,6 +386,7 @@ header #header-image-container {
     background-size: cover;
     -o-background-size: cover;
     min-width: 100%;
+    max-width: 100vw;
 }
 
 header .header-buttons {
@@ -541,7 +546,7 @@ header .intro-text .intro-heading {
     }
 
     .navbar-default .navbar-brand {
-        max-width: 500px;
+        max-width: 100vw;
     }
     .navbar-fixed-top {
         position: unset;
