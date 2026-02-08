@@ -237,6 +237,7 @@ section h2.section-heading {
     margin-bottom: 15px;
     font-size: 40px;
     color: #4c6069;
+    max-width: 90vw;
 }
 
 section h3.section-subheading {
