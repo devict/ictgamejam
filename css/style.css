@@ -5,6 +5,7 @@ html {
 
 section {
     padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .btn {
@@ -27,6 +28,10 @@ section {
 .tab-content {
 }
 
+.img-circle {
+    box-shadow: 2px 2px 2px black;
+}
+
 .collage-background-1 {
     background-image: url(../img/previous/collage_1.webp);
     background-position: 50% 0%;
@@ -39,6 +44,16 @@ section {
     max-height: 40vh;
     border-radius: 15rem;
     opacity: 93%;
+}
+
+#location-map {
+    min-height: 50vh;
+    width: 100%;
+}
+
+.character-select-target {
+    width: 13%;
+    height: 15%;
 }
 
 /* Styling for views larger than 992px (mainlg desktops) */

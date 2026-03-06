@@ -8,9 +8,11 @@
         <meta name="author" content="ICT Game Jam">
         <title>ICT Game Jam</title>
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
-                <!-- Stylesheets -->
+        
+        <!-- Stylesheets -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        <link href="js/leaflet/leaflet.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -25,6 +27,9 @@
 
         <!-- Bootstrap Core -->
         <script src="js/bootstrap-v4.6.2/bootstrap.min.js"></script>
+
+        <!-- LeafletJS -->
+         <script src="js/leaflet/leaflet.js"></script>
 
         <!-- Custom JS -->
         <script src="js/countdown-timer.js"></script>
@@ -53,6 +58,16 @@
             /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
                We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
         </style>
+
+        <!-- TODO
+                - button in navbar for buying a ticket?
+                - regsiter section still needed?
+                - a different font could add a lot of character
+                - dark mode?
+                - where to throw the global game jam stream player?
+                - do we want a slideshow somewhere still?
+
+        -->
     </head>
 
     <body>
@@ -92,7 +107,8 @@
                         <a 
                         class="btn-sm nav-link active" 
                         data-toggle="tab" 
-                        data-target="#about-section" 
+                        data-target="#about-section"
+                        href="#about-section" 
                         type="button" 
                         role="tab"
                         aria-controls="about-section"
@@ -105,7 +121,8 @@
                         <a 
                         class="btn-sm nav-link" 
                         data-toggle="tab" 
-                        data-target="#schedule-section" 
+                        data-target="#schedule-section"
+                        href="#schedule-section" 
                         type="button" 
                         role="tab"
                         aria-controls="schedule-section"
@@ -116,9 +133,11 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <a 
+                        id="location-link"
                         class="btn-sm nav-link" 
                         data-toggle="tab" 
-                        data-target="#location-section" 
+                        data-target="#location-section"
+                        href="#location-section" 
                         type="button" 
                         role="tab"
                         aria-controls="location-section"
@@ -127,11 +146,12 @@
                             Location
                         </a>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <!--<li class="nav-item" role="presentation">
                         <a 
                         class="btn-sm nav-link" 
                         data-toggle="tab" 
                         data-target="#register-section" 
+                        href="#register-section" 
                         type="button" 
                         role="tab"
                         aria-controls="register-section"
@@ -139,12 +159,13 @@
                         >
                             Register
                         </a>
-                    </li>
+                    </li>-->
                     <li class="nav-item" role="presentation">
                         <a 
                         class="btn-sm nav-link " 
                         data-toggle="tab" 
                         data-target="#devict-section" 
+                        href="#devict-section" 
                         type="button" 
                         role="tab"
                         aria-controls="devict-section"
@@ -158,6 +179,7 @@
                         class="btn-sm nav-link" 
                         data-toggle="tab" 
                         data-target="#support-section" 
+                        href="#support-section" 
                         type="button" 
                         role="tab"
                         aria-controls="support-section"
@@ -257,7 +279,7 @@
                     <!-- Friday -->
                     <div class="row justify-content-center pb-4">
                         <div class="col-sm col-lg-3 align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/rocket-launch.webp" alt="">
+                            <img class="img-circle img-responsive" src="img/schedule/kickoff.webp" alt="">
                         </div>
                         <div class="col-sm col-lg-7">
                             <h4>Friday</h4>
@@ -269,7 +291,7 @@
                     <div class="row justify-content-center pb-4">
                         <!-- Leverage bootstrap breakpoints to show the image on the left (above) when at XS breakpoint and hide that image when at any larger breakpoint -->
                         <div class="col-sm col-lg-3 d-block d-sm-none align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/developer.webp" alt="">
+                            <img class="img-circle img-responsive" src="img/schedule/plan.webp" alt="">
                         </div>
                         <div class="col-sm col-lg-7">
                             <h4>Saturday</h4>
@@ -278,13 +300,13 @@
                         </div>
                         <!-- Leverage bootstrap breakpoints to hide the image on the right when at XS breakpoint and show that image when at any larger breakpoint -->
                         <div class="col-sm col-lg-3 d-none d-sm-block align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/developer.webp" alt="">
+                            <img class="img-circle img-responsive" src="img/schedule/plan.webp" alt="">
                         </div>
                     </div>
                     <!-- Sunday -->
                     <div class="row justify-content-center pb-4">
                         <div class="col-sm col-lg-3 align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/ship.webp" alt="">
+                            <img class="img-circle img-responsive" src="img/schedule/polish.webp" alt="">
                         </div>
                         <div class="col-sm col-lg-7">
                             <h4>Sunday</h4>
@@ -298,7 +320,7 @@
                     <div class="row justify-content-center pb-4">
                         <!-- More bootstrap magic -->
                         <div class="col-sm col-lg-3 d-block d-sm-none align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/coop.webp" alt="">
+                            <img class="img-circle img-responsive" src="img/schedule/playing.webp" alt="">
                         </div>
                         <div class="col-sm col-lg-7">
                             <h4>After that?</h4>
@@ -307,13 +329,13 @@
                         </div>
                         <!-- More bootstrap magic -->
                         <div class="col-sm col-lg-3 d-none d-sm-block align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/coop.webp" alt="">
+                            <img class="img-circle img-responsive" src="img/schedule/playing.webp" alt="">
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="schedule-section" class="tab-pane fade" role="tabpanel" tabindex="0">
+            <section id="location-section" class="tab-pane fade" role="tabpanel" tabindex="0">
                 <div class="container">
                     <div class="row">
                         <br /><br />
@@ -327,15 +349,99 @@
                             <h3 class="section-heading" hidden>
                                 Shocker Studios at WSU's South Campus<br><a href="https://maps.app.goo.gl/8fLTsQDXB3PEVh7H7">3803 E. Harry Street, Suite 121, Wichita, KS 67218</a>
                             </h3>
+                            <div id="location-map"></div>
+                            <!-- Update the center value after each game jam -->
+                            <script type="text/javascript">
+                                /* Control the location on the map using the below const definitions */
+                                // uncomment this line after the winter game jam
+                                const latLng = [37.70768087710465, -97.12753791349064]
+                                // uncomment this line after the summer game jam
+                                //const latLng = [37.66303632737492, -97.2911476950105]
+                                
+                                /* Set up map using specified location */
+                                // initialize the map centered on the location of the event
+                                var map = L.map('location-map', {
+                                    center: latLng,
+                                    zoom: 13
+                                });
+                                // add open streets tile layer so the map actually looks like a map
+                                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                    maxZoom: 19,
+                                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                }).addTo(map);
+                                // re-draw the map when the location-link is navigated to (solves issue where open streets tiles do not load due to being in a hidden element initially)
+                                $('body').on('shown.bs.tab', '#location-link', function() {
+                                    map.invalidateSize(false);
+                                });
+                                // add pop-up to show where the event is located exactly
+                                L.marker(latLng).addTo(map).bindPopup('Butler Community College').openPopup();
+                            </script>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="schedule-section" class="tab-pane fade" role="tabpanel" tabindex="0">
-                schedule
+
+            <section id="devict-section" class="tab-pane fade" role="tabpanel" tabindex="0">
+                <div class="container">
+                    <div class="row text-center justify-content-center">
+                        <h2 class="section-heading">Meet the ICT Game Jam team!</h2>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <img id="character-select" src="img/characters/Noone.webp" alt="Brian Foster" class="d-block w-100">
+                                <div style="position: absolute; top: 32%; left: 48%" class="character-select-target" onmouseover="changeCharacter('Brian')"></div>
+                                <div style="position: absolute; top: 48%; left: 48%" class="character-select-target" onmouseover="changeCharacter('Christen')"></div>
+                                <div style="position: absolute; top: 52%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Jack')"></div>
+                                <div style="position: absolute; top: 20%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Julian')"></div>
+                                <div style="position: absolute; top: 36%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Kenny')"></div>
+                                <div style="position: absolute; top: 25%; left: 76%" class="character-select-target" onmouseover="changeCharacter('Jarvis')"></div>
+                            <img/>
+                        </div>
+                    </div>
+                    <div class="row text-center justify-content-center" style="margin-bottom: -80px; margin-top: 10px;">
+                        <h3 class="section-subheading">ICT Game Jam is brought to you by devICT!</h3>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-2" style="display: flex; justify-content: center;">
+                            <a href="https://devict.org">
+                                <img src="img/logos/devict_logo_260.png" class="img-responsive img-centered" alt="devICT">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row text-center justify-content-center">
+                        <h3 class="section-subheading">ICT Game Jam is a Jam Site for The Global Game Jam!</h3>
+                        
+                    </div>
+                    <div class="row text-center justify-content-center">
+                        <h6>Learn more by clicking the image below:</h6>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-2" style="display: flex; justify-content: center;">
+                            <a href="https://globalgamejam.org/jam-sites/2025/ict-game-jam">
+                                <img src="img/logos/global_game_jam_260.webp" class="img-responsive img-centered" alt="Global Game Jam">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </section>
-            <section id="schedule-section" class="tab-pane fade" role="tabpanel" tabindex="0">
-                schedule
+
+            <section id="support-section" class="tab-pane fade" role="tabpanel" tabindex="0">
+                <div class="container">
+                    <div class="row pb-5">
+                        <div class="col-lg-12 text-center">
+                            <h2 class="section-heading">Support ICT Game Jam</h2>
+                            <h3 class="section-subheading">Check out the games from previous events on our <a href="https://ictgamejam.itch.io">Itch.io page</a>!</h3>
+                            <h3 class="section-subheading text-muted">The best way to help is to
+                            participate!  Otherwise, we welcome volunteered time or talent in any amount before, during or after the event.<br /><br />Finally, if you absolutely insist, here are some sponsorship packages to consider! For all these, please contact <a href="mailto:ictgamejam@devict.org">ictgamejam@devict.org</a>.<br><br>This and other Wichita game development events are operated under <a href="https://devict.org/">devICT</a>, a 501c3 organization.  All donations are used to run this and future game development events.</h3>
+                        </div>
+                        <div class="col-lg-6 pb-2">
+                            <img class="img-fluid sponsorship-handout" src="img/sponsorship/handout-1.webp" alt="Sponsorship packages handout page 1."/>
+                        </div>
+                        <div class="col-lg-6">
+                            <img class="img-fluid sponsorship-handout" src="img/sponsorship/handout-2.webp" alt="Sponsorship packages handout page 2."/>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -400,6 +506,25 @@
                     </div>
                 </div>
         </footer>
+
+        <script>
+            jQuery(document).ready(function($) {
+                $('#navbar-tabs a').click(function(e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+
+                // store the currently selected tab in the hash value
+                $("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
+                    var id = $(e.target).attr("href").substr(1);
+                    window.location.hash = id;
+                });
+
+                // on load of the page: switch to the currently selected tab
+                var hash = window.location.hash;
+                $('#navbar-tabs a[href="' + hash + '"]').tab('show');
+            });
+        </script>
 
         <!-- Mail Chimp sign-up modal-->
         <div id="mc_modal" class="modal" tabindex="-1" role="dialog">
