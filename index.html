@@ -38,8 +38,6 @@
         <!--<script src="minigame/lib/phaser.min.js"></script>-->
         <!--<script src="minigame/src/main.js" type="module"></script>-->
 
-        <!-- Need to figure out why jQuery is not working for me   
-        -->
         <script type="text/javascript">
             function highlightAboutSectionTitle() {
                 document.getElementById("about-title").animate(
@@ -60,48 +58,66 @@
         </style>
 
         <!-- TODO
+            main
+                - redo nav as infinite scroll (but try to keep tab styling and scrollspy working)
+                - re-add section for carousel, livestream, (and itch?)
+                - button to buy a ticket in the navbar
+
+            other
                 - button in navbar for buying a ticket?
                 - regsiter section still needed?
                 - a different font could add a lot of character
                 - dark mode?
-                - where to throw the global game jam stream player?
-                - do we want a slideshow somewhere still?
-
+                - try to do a fan of images on the schedule
         -->
     </head>
 
     <body>
         <!-- Navigation for the website's content  -->
         <nav id="header" class="w-100 fixed-top">               
+            <!-- Social buttons -->
+            <!-- These need to stay in the top right, while the other header elements can flex align in the fluid container -->
+            <div class="social-buttons-container d-flex">
+                <div id="social-buttons" class="align-content-center flex-fill py-1">
+                    <span class="px-1"><a href="https://www.facebook.com/developerict"><img src="img/icons/facebook.svg"/></a></span>
+                    <span class="px-1"><a href="https://bsky.app/profile/ictgamejam.bsky.social"><img src="img/icons/bluesky.svg"/></a></span>
+                    <span class="px-1"><a href="https://discord.gg/BUeHYVCQGr"><img src="img/icons/discord.svg"/></a></span>
+                    <span class="px-1"><a href="https://devict.slack.com/"><img src="img/icons/slack.svg"/></a></span>
+                    <!--<span class="mobile-mailchimp"><a data-toggle="collapse" href="#mc_expand" role="button" aria-expanded="false" aria-controls="mc_expand"><img src="img/icons/envelope-plus-fill.svg"/></a></span>-->
+                    <span class="default-mailchimp px-1"><a data-toggle="modal" data-target="#mc_modal" role="button" aria-expanded="false" aria-controls="mc_expand"><img src="img/icons/envelope-plus-fill.svg"/></a></span>
+                </div>
+            </div>
+        
             <div class="container-fluid">
-                <div class="row px-4">
-                    <!-- Name/logo -->
-                    <span class="navbar-brand">
-                        <span style="font-weight: bold;">
-                            <span class="text-secondary">ICT</span>
-                            <span style="color: #337ab7;">GAMEJAM</span>
-                            <span class="text-secondary">.COM</span>
+                <div class="site-title">
+                    <div class="row px-4 pt-1 justify-content-left">
+                        <!-- Name/logo -->
+                        <span class="navbar-brand">
+                            <span style="font-weight: bold;">
+                                <span class="text-secondary">ICT</span>
+                                <span style="color: #337ab7;">GAMEJAM</span>
+                                <span class="text-secondary">.COM</span>
+                            </span>
                         </span>
-                        &nbsp;Summer Date TBA
-                    </span>
+
+                        <div class="d-flex align-content-center justify-content-around pt-2">
+                            <span>
+                                &nbsp;July 24th-26th
+                            </span>
+                        </div>
+
+                        <a class="btn btn-header p-2 mx-1" href="https://www.zeffy.com/en-US/ticketing/2026-winter-ict-game-jam">Buy a Ticket Now</a>
+                    </div>
+                </div>
+                
+                <div class="row px-4 pb-2">
                     <!-- Splash/countdown timer -->
-                    <div class="header-splash px-4 align-content-center flex-fill"> 
+                    <div class="header-splash align-content-center"> 
                         <div id="countdown-timer">How much longer until ICT Game Jam?</div>
                         <a class="header-splash-message" href="#section-previous"></a>
                     </div>
-                    <!-- Social buttons -->
-                    <div class="align-content-center">
-                        <span class="px-1"><a href="https://www.facebook.com/developerict"><img src="img/icons/facebook.svg"/></a></span>
-                        <span class="px-1"><a href="https://bsky.app/profile/ictgamejam.bsky.social"><img src="img/icons/bluesky.svg"/></a></span>
-                        <span class="px-1"><a href="https://discord.gg/BUeHYVCQGr"><img src="img/icons/discord.svg"/></a></span>
-                        <span class="px-1"><a href="https://devict.slack.com/"><img src="img/icons/slack.svg"/></a></span>
-                        <!--<span class="mobile-mailchimp"><a data-toggle="collapse" href="#mc_expand" role="button" aria-expanded="false" aria-controls="mc_expand"><img src="img/icons/envelope-plus-fill.svg"/></a></span>-->
-                        <span class="default-mailchimp px-1"><a data-toggle="modal" data-target="#mc_modal" role="button" aria-expanded="false" aria-controls="mc_expand"><img src="img/icons/envelope-plus-fill.svg"/></a></span>
-                    </div>
                 </div>
-                <div class="row px-4 pb-2">
-                    
-                </div>
+
                 <ul id="navbar-tabs" class="nav nav-tabs" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a 
@@ -194,256 +210,254 @@
 
 
         <!-- Actual website content -->
-        <!-- Sections are show/hidden by the navbar-tabs -->
-        <div class="tab-content">
             
-            <section id="about-section" class="tab-pane fade show active" role="tabpanel" tabindex="0">
-                <!-- Info and buttons for this section-->
-                <div class="container-fluid collage-background-1">
-                    <div class="row pb-4 pt-4">
-                        <div class="col-12 d-flex justify-content-center">
-                            <img class="hero-image" src="img/header-bg.png">
-                        </div>
+        <section id="about-section" >
+            <!-- Info and buttons for this section-->
+            <div class="container-fluid collage-background-1">
+                <div class="row pb-4 pt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <img class="hero-image" src="img/header-bg.png">
                     </div>
                 </div>
-                <div class="container my-4">
-                    <div class="row card">
-                        <div class="col-12 text-center">
-                            <a class="btn btn-primary p-2 m-4" onclick="highlightAboutSectionTitle()">What's a game jam?</a>
-                            <a class="btn btn-secondary p-2 m-4" href="https://www.zeffy.com/en-US/ticketing/2026-winter-ict-game-jam">Buy a Ticket Now</a>
-                        </div>
+            </div>
+            <div class="container my-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center card">
+                        <a id="what-is-button" class="btn btn-primary p-2 m-4" onclick="highlightAboutSectionTitle()" href="#what-is-button">What's a game jam?</a>
+                        <a class="btn btn-secondary p-2 m-4" href="https://www.zeffy.com/en-US/ticketing/2026-winter-ict-game-jam">Buy a Ticket Now</a>
                     </div>
                 </div>
-            
+            </div>
+        
 
-            
-                <div id="info-subsection" class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h2 class="section-heading"><span id="about-title">It&rsquo;s a PARTY</span></h2>
-                            <h3 class="section-subheading text-muted">
-                            Ok, <strong>technically</strong> it&rsquo;s a competition with prizes. It&rsquo;s not a workshop or a class about making games. But if you want to spend a weekend learning game development and getting fed, you&rsquo;ll be in good company.
-                            </h3>
-                        </div>
-                    </div>
-            
-                    <div class="row text-center">
-                    <div class="col-md-3">
-                        <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="service-heading">Do I need to have made a game before?</h4>
-                        <p class="text-muted">Plenty of previous participants had little or no game development experience, but they had a blast.  We&rsquo;ll have lots of people willing to answer questions and help you learn at your own pace!</p>
-                    </div>
-            
-                    <div class="col-md-3">
-                        <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-code fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="service-heading">Do I need to be a programmer?</h4>
-                        <p class="text-muted">No!  Games also need artists, writers, and designers.  There is no rule for whether your game must be 2D, 3D, complex, or even have graphics.  Make a board or card game if you like!</p>
-                    </div>
-            
-                    <div class="col-md-3">
-                        <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="service-heading">Do I need a computer?</h4>
-                        <p class="text-muted">Yes! You need to bring your own computer capable of connecting to Wi-Fi.</p>
-                    </div>
-            
-                    <div class="col-md-3">
-                        <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="service-heading">I love it! I must know more!</h4>
-                        <p class="text-muted">If you insist!  Participating gets you snacks and drinks, all while hanging out with local game developers!  Meals are provided throughout the weekend.  Follow <a href="https://twitter.com/ICTGameJam">@ICTGameJam</a>, and join us in <a href="https://devict-slackin.herokuapp.com">Slack</a> to get involved with local game devs and upcoming events!</p>
-                    </div>
+        
+            <div id="info-subsection" class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading"><span id="about-title">It&rsquo;s a PARTY</span></h2>
+                        <h3 class="section-subheading text-muted">
+                        Ok, <strong>technically</strong> it&rsquo;s a competition with prizes. It&rsquo;s not a workshop or a class about making games. But if you want to spend a weekend learning game development and getting fed, you&rsquo;ll be in good company.
+                        </h3>
                     </div>
                 </div>
-            </section>
+        
+                <div class="row text-center">
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Do I need to have made a game before?</h4>
+                    <p class="text-muted">Plenty of previous participants had little or no game development experience, but they had a blast.  We&rsquo;ll have lots of people willing to answer questions and help you learn at your own pace!</p>
+                </div>
+        
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Do I need to be a programmer?</h4>
+                    <p class="text-muted">No!  Games also need artists, writers, and designers.  There is no rule for whether your game must be 2D, 3D, complex, or even have graphics.  Make a board or card game if you like!</p>
+                </div>
+        
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Do I need a computer?</h4>
+                    <p class="text-muted">Yes! You need to bring your own computer capable of connecting to Wi-Fi.</p>
+                </div>
+        
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">I love it! I must know more!</h4>
+                    <p class="text-muted">If you insist!  Participating gets you snacks and drinks, all while hanging out with local game developers!  Meals are provided throughout the weekend.  Follow <a href="https://twitter.com/ICTGameJam">@ICTGameJam</a>, and join us in <a href="https://devict-slackin.herokuapp.com">Slack</a> to get involved with local game devs and upcoming events!</p>
+                </div>
+                </div>
+            </div>
+        </section>
 
-            <section id="schedule-section" class="tab-pane fade" role="tabpanel" tabindex="0">
-                <div class="container">
-                    <!-- Section title -->
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h2 class="section-heading">Schedule</h2>
-                            <h3 class="section-subheading text-muted">Great! Now that you&#39;re going to the game jam, here&#39;s how the weekend will go...</h3>
-                        </div>
-                    </div>
-                    <!-- Friday -->
-                    <div class="row justify-content-center pb-4">
-                        <div class="col-sm col-lg-3 align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/kickoff.webp" alt="">
-                        </div>
-                        <div class="col-sm col-lg-7">
-                            <h4>Friday</h4>
-                            <h5 class="subheading">Kickoff!</h5>
-                            <p class="text-muted">Doors open at 11am and the event starts at noon!  There will be a small "hi, glad you're here, this is the theme" talk, with the main kickoff event happening at 6pm. Those needing teams will have an opportunity to pitch ideas and form or join teams as necessary.  You can even work solo if you want.  Three people are ideal, and we prefer teams to stay below 5.  <strong>Then it&rsquo;s time to start making games!</strong>  Work as long as you can, while staying healthy and safe!  You're welcome to work through the night, but we send people home around midnight.</p>
-                        </div> 
-                    </div>
-                    <!-- Saturday -->
-                    <div class="row justify-content-center pb-4">
-                        <!-- Leverage bootstrap breakpoints to show the image on the left (above) when at XS breakpoint and hide that image when at any larger breakpoint -->
-                        <div class="col-sm col-lg-3 d-block d-sm-none align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/plan.webp" alt="">
-                        </div>
-                        <div class="col-sm col-lg-7">
-                            <h4>Saturday</h4>
-                            <h5 class="subheading">Build Day!</h5>
-                            <p class="text-muted">Show up in the morning.  Enjoy refreshments, meals and &hellip; oh yeah&hellip; build a game!  Hit a wall?  Ask for help!  Lean on the volunteers and fellow game devs for feedback and encouragement!  Same closing rules as Friday!</p>
-                        </div>
-                        <!-- Leverage bootstrap breakpoints to hide the image on the right when at XS breakpoint and show that image when at any larger breakpoint -->
-                        <div class="col-sm col-lg-3 d-none d-sm-block align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/plan.webp" alt="">
-                        </div>
-                    </div>
-                    <!-- Sunday -->
-                    <div class="row justify-content-center pb-4">
-                        <div class="col-sm col-lg-3 align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/polish.webp" alt="">
-                        </div>
-                        <div class="col-sm col-lg-7">
-                            <h4>Sunday</h4>
-                            <h5 class="subheading">Polish, SHIP IT!!  Winners announced!</h5>
-                            <p class="text-muted">Arrive in the morning to put the finishing touches on your game.  Work stops, lunch begins at 12pm.  Developers will vote during/after lunch.  Winners announced once all the votes are in and tallied.</p>
-                            <h5 class="subheading">Community Play</h5>
-                            <p class="text-muted">At 1pm have Friends and Family come play your games!</p>
-                        </div>
-                    </div>
-                    <!-- Beyond -->
-                    <div class="row justify-content-center pb-4">
-                        <!-- More bootstrap magic -->
-                        <div class="col-sm col-lg-3 d-block d-sm-none align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/playing.webp" alt="">
-                        </div>
-                        <div class="col-sm col-lg-7">
-                            <h4>After that?</h4>
-                            <h5 class="subheading">Keep making (and playing) games!</h5>
-                            <p class="text-muted">Join our <a href="https://discord.gg/BUeHYVCQGr">Discord Server</a> to tell us what you're working on and hear what other are up to. Also consider joing the <a href="https://devict.slack.com/">devICT Slack Channel</a> for discussions on more varied topics with software developers in the Wichita area!</p>
-                        </div>
-                        <!-- More bootstrap magic -->
-                        <div class="col-sm col-lg-3 d-none d-sm-block align-content-center">
-                            <img class="img-circle img-responsive" src="img/schedule/playing.webp" alt="">
-                        </div>
+        <section id="schedule-section">
+            <div class="container">
+                <!-- Section title -->
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Schedule</h2>
+                        <h3 class="section-subheading text-muted">Great! Now that you&#39;re going to the game jam, here&#39;s how the weekend will go...</h3>
                     </div>
                 </div>
-            </section>
+                <!-- Friday -->
+                <div class="row justify-content-center pb-4">
+                    <div class="col-sm col-lg-3 align-content-center">
+                        <img class="img-circle img-responsive" src="img/schedule/kickoff.webp" alt="">
+                    </div>
+                    <div class="col-sm col-lg-7">
+                        <h4>Friday</h4>
+                        <h5 class="subheading">Kickoff!</h5>
+                        <p class="text-muted">Doors open at 11am and the event starts at noon!  There will be a small "hi, glad you're here, this is the theme" talk, with the main kickoff event happening at 6pm. Those needing teams will have an opportunity to pitch ideas and form or join teams as necessary.  You can even work solo if you want.  Three people are ideal, and we prefer teams to stay below 5.  <strong>Then it&rsquo;s time to start making games!</strong>  Work as long as you can, while staying healthy and safe!  You're welcome to work through the night, but we send people home around midnight.</p>
+                    </div> 
+                </div>
+                <!-- Saturday -->
+                <div class="row justify-content-center pb-4">
+                    <!-- Leverage bootstrap breakpoints to show the image on the left (above) when at XS breakpoint and hide that image when at any larger breakpoint -->
+                    <div class="col-sm col-lg-3 d-block d-sm-none align-content-center">
+                        <img class="img-circle img-responsive" src="img/schedule/plan.webp" alt="">
+                    </div>
+                    <div class="col-sm col-lg-7">
+                        <h4>Saturday</h4>
+                        <h5 class="subheading">Build Day!</h5>
+                        <p class="text-muted">Show up in the morning.  Enjoy refreshments, meals and &hellip; oh yeah&hellip; build a game!  Hit a wall?  Ask for help!  Lean on the volunteers and fellow game devs for feedback and encouragement!  Same closing rules as Friday!</p>
+                    </div>
+                    <!-- Leverage bootstrap breakpoints to hide the image on the right when at XS breakpoint and show that image when at any larger breakpoint -->
+                    <div class="col-sm col-lg-3 d-none d-sm-block align-content-center">
+                        <img class="img-circle img-responsive" src="img/schedule/plan.webp" alt="">
+                    </div>
+                </div>
+                <!-- Sunday -->
+                <div class="row justify-content-center pb-4">
+                    <div class="col-sm col-lg-3 align-content-center">
+                        <img class="img-circle img-responsive" src="img/schedule/polish.webp" alt="">
+                    </div>
+                    <div class="col-sm col-lg-7">
+                        <h4>Sunday</h4>
+                        <h5 class="subheading">Polish, SHIP IT!!  Winners announced!</h5>
+                        <p class="text-muted">Arrive in the morning to put the finishing touches on your game.  Work stops, lunch begins at 12pm.  Developers will vote during/after lunch.  Winners announced once all the votes are in and tallied.</p>
+                        <h5 class="subheading">Community Play</h5>
+                        <p class="text-muted">At 1pm have Friends and Family come play your games!</p>
+                    </div>
+                </div>
+                <!-- Beyond -->
+                <div class="row justify-content-center pb-4">
+                    <!-- More bootstrap magic -->
+                    <div class="col-sm col-lg-3 d-block d-sm-none align-content-center">
+                        <img class="img-circle img-responsive" src="img/schedule/playing.webp" alt="">
+                    </div>
+                    <div class="col-sm col-lg-7">
+                        <h4>After that?</h4>
+                        <h5 class="subheading">Keep making (and playing) games!</h5>
+                        <p class="text-muted">Join our <a href="https://discord.gg/BUeHYVCQGr">Discord Server</a> to tell us what you're working on and hear what other are up to. Also consider joing the <a href="https://devict.slack.com/">devICT Slack Channel</a> for discussions on more varied topics with software developers in the Wichita area!</p>
+                    </div>
+                    <!-- More bootstrap magic -->
+                    <div class="col-sm col-lg-3 d-none d-sm-block align-content-center">
+                        <img class="img-circle img-responsive" src="img/schedule/playing.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <section id="location-section" class="tab-pane fade" role="tabpanel" tabindex="0">
-                <div class="container">
-                    <div class="row">
-                        <br /><br />
-                        <div class="col-lg-12 text-center">
-                            <h2 class="section-heading">Location</h2>
-                            <!-- Hide this element after the winter game jam -->
-                            <h3 class="section-heading">
-                                Butler Community College Andover Campus<br><a href="https://goo.gl/maps/CmRmpSojvmSnkxEP8">715 East 13th Street, Andover, KS 67002</a>
-                            </h3>
-                            <!-- Un-hide this element after the summer game jam -->
-                            <h3 class="section-heading" hidden>
-                                Shocker Studios at WSU's South Campus<br><a href="https://maps.app.goo.gl/8fLTsQDXB3PEVh7H7">3803 E. Harry Street, Suite 121, Wichita, KS 67218</a>
-                            </h3>
-                            <div id="location-map"></div>
-                            <!-- Update the center value after each game jam -->
-                            <script type="text/javascript">
-                                /* Control the location on the map using the below const definitions */
-                                // uncomment this line after the winter game jam
-                                const latLng = [37.70768087710465, -97.12753791349064]
-                                // uncomment this line after the summer game jam
-                                //const latLng = [37.66303632737492, -97.2911476950105]
-                                
-                                /* Set up map using specified location */
-                                // initialize the map centered on the location of the event
-                                var map = L.map('location-map', {
-                                    center: latLng,
-                                    zoom: 13
-                                });
-                                // add open streets tile layer so the map actually looks like a map
-                                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                    maxZoom: 19,
-                                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                                }).addTo(map);
-                                // re-draw the map when the location-link is navigated to (solves issue where open streets tiles do not load due to being in a hidden element initially)
-                                $('body').on('shown.bs.tab', '#location-link', function() {
-                                    map.invalidateSize(false);
-                                });
-                                // add pop-up to show where the event is located exactly
-                                L.marker(latLng).addTo(map).bindPopup('Butler Community College').openPopup();
-                            </script>
-                        </div>
+        <section id="location-section">
+            <div class="container">
+                <div class="row">
+                    <br /><br />
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Location</h2>
+                        <!-- Hide this element after the winter game jam -->
+                        <h3 class="section-heading">
+                            Butler Community College Andover Campus<br><a href="https://goo.gl/maps/CmRmpSojvmSnkxEP8">715 East 13th Street, Andover, KS 67002</a>
+                        </h3>
+                        <!-- Un-hide this element after the summer game jam -->
+                        <h3 class="section-heading" hidden>
+                            Shocker Studios at WSU's South Campus<br><a href="https://maps.app.goo.gl/8fLTsQDXB3PEVh7H7">3803 E. Harry Street, Suite 121, Wichita, KS 67218</a>
+                        </h3>
+                        <div id="location-map"></div>
+                        <!-- Update the center value after each game jam -->
+                        <script type="text/javascript">
+                            /* Control the location on the map using the below const definitions */
+                            // uncomment this line after the winter game jam
+                            const latLng = [37.70768087710465, -97.12753791349064]
+                            // uncomment this line after the summer game jam
+                            //const latLng = [37.66303632737492, -97.2911476950105]
+                            
+                            /* Set up map using specified location */
+                            // initialize the map centered on the location of the event
+                            var map = L.map('location-map', {
+                                center: latLng,
+                                zoom: 13
+                            });
+                            // add open streets tile layer so the map actually looks like a map
+                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                maxZoom: 19,
+                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                            }).addTo(map);
+                            // re-draw the map when the location-link is navigated to (solves issue where open streets tiles do not load due to being in a hidden element initially)
+                            $('body').on('shown.bs.tab', '#location-link', function() {
+                                map.invalidateSize(false);
+                            });
+                            // add pop-up to show where the event is located exactly
+                            L.marker(latLng).addTo(map).bindPopup('Butler Community College').openPopup();
+                        </script>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="devict-section" class="tab-pane fade" role="tabpanel" tabindex="0">
-                <div class="container">
-                    <div class="row text-center justify-content-center">
-                        <h2 class="section-heading">Meet the ICT Game Jam team!</h2>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12">
-                            <img id="character-select" src="img/characters/Noone.webp" alt="Brian Foster" class="d-block w-100">
-                                <div style="position: absolute; top: 32%; left: 48%" class="character-select-target" onmouseover="changeCharacter('Brian')"></div>
-                                <div style="position: absolute; top: 48%; left: 48%" class="character-select-target" onmouseover="changeCharacter('Christen')"></div>
-                                <div style="position: absolute; top: 52%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Jack')"></div>
-                                <div style="position: absolute; top: 20%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Julian')"></div>
-                                <div style="position: absolute; top: 36%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Kenny')"></div>
-                                <div style="position: absolute; top: 25%; left: 76%" class="character-select-target" onmouseover="changeCharacter('Jarvis')"></div>
-                            <img/>
-                        </div>
-                    </div>
-                    <div class="row text-center justify-content-center" style="margin-bottom: -80px; margin-top: 10px;">
-                        <h3 class="section-subheading">ICT Game Jam is brought to you by devICT!</h3>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-sm-2" style="display: flex; justify-content: center;">
-                            <a href="https://devict.org">
-                                <img src="img/logos/devict_logo_260.png" class="img-responsive img-centered" alt="devICT">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row text-center justify-content-center">
-                        <h3 class="section-subheading">ICT Game Jam is a Jam Site for The Global Game Jam!</h3>
-                        
-                    </div>
-                    <div class="row text-center justify-content-center">
-                        <h6>Learn more by clicking the image below:</h6>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-sm-2" style="display: flex; justify-content: center;">
-                            <a href="https://globalgamejam.org/jam-sites/2025/ict-game-jam">
-                                <img src="img/logos/global_game_jam_260.webp" class="img-responsive img-centered" alt="Global Game Jam">
-                            </a>
-                        </div>
+        <section id="devict-section">
+            <div class="container">
+                <div class="row text-center justify-content-center">
+                    <h2 class="section-heading">Meet the ICT Game Jam team!</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <img id="character-select" src="img/characters/Noone.webp" alt="Brian Foster" class="d-block w-100">
+                            <div style="position: absolute; top: 32%; left: 48%" class="character-select-target" onmouseover="changeCharacter('Brian')"></div>
+                            <div style="position: absolute; top: 48%; left: 48%" class="character-select-target" onmouseover="changeCharacter('Christen')"></div>
+                            <div style="position: absolute; top: 52%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Jack')"></div>
+                            <div style="position: absolute; top: 20%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Julian')"></div>
+                            <div style="position: absolute; top: 36%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Kenny')"></div>
+                            <div style="position: absolute; top: 25%; left: 76%" class="character-select-target" onmouseover="changeCharacter('Jarvis')"></div>
+                        <img/>
                     </div>
                 </div>
-            </section>
+                <div class="row text-center justify-content-center" style="margin-bottom: -80px; margin-top: 10px;">
+                    <h3 class="section-subheading">ICT Game Jam is brought to you by devICT!</h3>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-2" style="display: flex; justify-content: center;">
+                        <a href="https://devict.org">
+                            <img src="img/logos/devict_logo_260.png" class="img-responsive img-centered" alt="devICT">
+                        </a>
+                    </div>
+                </div>
+                <div class="row text-center justify-content-center">
+                    <h3 class="section-subheading">ICT Game Jam is a Jam Site for The Global Game Jam!</h3>
+                    
+                </div>
+                <div class="row text-center justify-content-center">
+                    <h6>Learn more by clicking the image below:</h6>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-2" style="display: flex; justify-content: center;">
+                        <a href="https://globalgamejam.org/jam-sites/2025/ict-game-jam">
+                            <img src="img/logos/global_game_jam_260.webp" class="img-responsive img-centered" alt="Global Game Jam">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <section id="support-section" class="tab-pane fade" role="tabpanel" tabindex="0">
-                <div class="container">
-                    <div class="row pb-5">
-                        <div class="col-lg-12 text-center">
-                            <h2 class="section-heading">Support ICT Game Jam</h2>
-                            <h3 class="section-subheading">Check out the games from previous events on our <a href="https://ictgamejam.itch.io">Itch.io page</a>!</h3>
-                            <h3 class="section-subheading text-muted">The best way to help is to
-                            participate!  Otherwise, we welcome volunteered time or talent in any amount before, during or after the event.<br /><br />Finally, if you absolutely insist, here are some sponsorship packages to consider! For all these, please contact <a href="mailto:ictgamejam@devict.org">ictgamejam@devict.org</a>.<br><br>This and other Wichita game development events are operated under <a href="https://devict.org/">devICT</a>, a 501c3 organization.  All donations are used to run this and future game development events.</h3>
-                        </div>
-                        <div class="col-lg-6 pb-2">
-                            <img class="img-fluid sponsorship-handout" src="img/sponsorship/handout-1.webp" alt="Sponsorship packages handout page 1."/>
-                        </div>
-                        <div class="col-lg-6">
-                            <img class="img-fluid sponsorship-handout" src="img/sponsorship/handout-2.webp" alt="Sponsorship packages handout page 2."/>
-                        </div>
+        <section id="support-section">
+            <div class="container">
+                <div class="row pb-5">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Support ICT Game Jam</h2>
+                        <h3 class="section-subheading">Check out the games from previous events on our <a href="https://ictgamejam.itch.io">Itch.io page</a>!</h3>
+                        <h3 class="section-subheading text-muted">The best way to help is to
+                        participate!  Otherwise, we welcome volunteered time or talent in any amount before, during or after the event.<br /><br />Finally, if you absolutely insist, here are some sponsorship packages to consider! For all these, please contact <a href="mailto:ictgamejam@devict.org">ictgamejam@devict.org</a>.<br><br>This and other Wichita game development events are operated under <a href="https://devict.org/">devICT</a>, a 501c3 organization.  All donations are used to run this and future game development events.</h3>
+                    </div>
+                    <div class="col-lg-6 pb-2">
+                        <img class="img-fluid sponsorship-handout" src="img/sponsorship/handout-1.webp" alt="Sponsorship packages handout page 1."/>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid sponsorship-handout" src="img/sponsorship/handout-2.webp" alt="Sponsorship packages handout page 2."/>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+        
 
         <footer class="container">
             <hr>

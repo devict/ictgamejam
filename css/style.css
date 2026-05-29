@@ -4,7 +4,7 @@ html {
 }
 
 section {
-    padding-top: 100px;
+    padding-top: 110px;
     padding-bottom: 100px;
 }
 
@@ -18,6 +18,23 @@ section {
     background-color: white;
 }
 
+.site-title {
+    width: 75%;
+    margin-right: 25%;
+}
+
+.social-buttons-container {
+    position: absolute; 
+    right: 0;
+    width: 25%;
+}
+
+.btn-header {
+    color:white;
+    background-color:goldenrod;
+    border-radius: 5%;
+}
+
 .nav {
     background-color: white;
 }
@@ -26,7 +43,16 @@ section {
     font-size: 2vw;
 }
 
+.nav-tabs {
+    justify-content: space-evenly;
+}
+
+.navbar-brand {
+    word-wrap: normal;
+}
+
 .img-circle {
+    border: black solid 2px;
     box-shadow: 2px 2px 2px black;
 }
 
@@ -35,6 +61,10 @@ section {
     background-position: 50% 0%;
     background-size: auto 100%;
     background-repeat: repeat-x;
+}
+
+#social-buttons span a, #social-buttons span a img {
+    height: 36px;
 }
 
 .hero-image {
@@ -54,6 +84,13 @@ section {
     height: 15%;
 }
 
+.sponsor-logo {
+    max-width: 30%;
+}
+.sponsor-logo a img {
+    max-width: 100%;
+}
+
 /* Styling for views larger than 992px (mainlg desktops) */
 @media (min-width: 992px) {
     /* Use consistent font size for screens this size and up to prevent navbar from expanding in height */
@@ -66,12 +103,17 @@ section {
 @media(max-width:767.98px) {
     /* Ensure navbar doesn't cover the top of the tab content */
     section {
-        padding-top: 140px;
+        padding-top: 120px;
     }
 
     /* Prevent keep nav items legible at lower screen widths */
     .nav-link {
         font-size: 2.5vw;
+    }
+
+    /* Prevent social buttons from being too large at lower screen widths */
+    #social-buttons span a, #social-buttons span a img {
+        height: 24px;
     }
 }
 
@@ -79,7 +121,7 @@ section {
 @media(max-width:575.98px) {
     /* Ensure navbar doesn't cover the top of the tab content */
     section {
-        padding-top: 160px;
+        padding-top: 140px;
     }
     
     /* Force the social media buttons onto the next row of the header container */
@@ -91,5 +133,15 @@ section {
     .nav-link {
         padding: 0.5rem 0.5rem;
         font-size: 3vw;
+    }
+
+    /* Prevent social buttons from being too large at lower screen widths */
+    #social-buttons span a, #social-buttons span a img {
+        height: 16px;
+    }
+
+    /* Place social buttons against left side when screen gets smaller so it looks cleaner when they jump down to the second row */
+    #social-buttons {
+        justify-content: flex-start !important;
     }
 }
