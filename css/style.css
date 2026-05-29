@@ -15,7 +15,7 @@ section {
 }
 
 #header {
-    background-color: white;
+    background-color: #EDEDED;
 }
 
 .site-title {
@@ -31,12 +31,13 @@ section {
 
 .btn-header {
     color:white;
-    background-color:goldenrod;
+    background-color: #007bff;
     border-radius: 5%;
+    height: 70%;
 }
 
 .nav {
-    background-color: white;
+    
 }
 
 .nav-link {
