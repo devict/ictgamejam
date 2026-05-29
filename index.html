@@ -8,9 +8,11 @@
         <meta name="author" content="ICT Game Jam">
         <title>ICT Game Jam</title>
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
-                <!-- Stylesheets -->
+        
+        <!-- Stylesheets -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        <link href="js/leaflet/leaflet.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -21,18 +23,31 @@
         <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 
         <!-- jQuery -->
-        <script src="js/jquery/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
         <!-- Bootstrap Core -->
         <script src="js/bootstrap-v4.6.2/bootstrap.min.js"></script>
 
+        <!-- LeafletJS -->
+         <script src="js/leaflet/leaflet.js"></script>
+
         <!-- Custom JS -->
         <script src="js/countdown-timer.js"></script>
         <script src="js/character-select.js"></script>
-
         <!-- Minigame -->
         <!--<script src="minigame/lib/phaser.min.js"></script>-->
         <!--<script src="minigame/src/main.js" type="module"></script>-->
+
+        <script type="text/javascript">
+            function highlightAboutSectionTitle() {
+                document.getElementById("about-title").animate(
+                    [
+                        {'color': 'black', 'transform': 'scale(1)', 'textShadow': 'none'},
+                        {'color': 'red', 'transform': 'scale(2)', 'textShadow': '3px 10px 5px black'},
+                        {'color': 'black', 'transform': 'scale(1)', 'textShadow': 'none'}
+                    ], 2000);
+            }
+        </script>
         
         <!-- For mailchimp form -->
         <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
@@ -44,88 +59,155 @@
 
     </head>
 
-    <nav id="navbar" class="navbar navbar-default fixed-top align-content-center">               
+    <body>
         <!-- Navigation for the website's content  -->
-        <div class="navbar-header">
-            <a class="navbar-brand page-scroll" href="#page-top">
-                <span style="font-size:6vw;">
-                    <span style="font-weight: bold;">
-                        <span class="text-secondary">ICT</span>
-                        <span style="color: #337ab7;">GAMEJAM</span>
-                        <span class="text-secondary">.COM</span>
-                    </span>
-                    &nbsp;Summer Date TBA
-                </span>
-            </a>
-        </div>
+        <nav id="header" class="w-100 fixed-top">               
+            <!-- Social buttons -->
+            <!-- These need to stay in the top right, while the other header elements can flex align in the fluid container -->
+            <div class="social-buttons-container d-flex">
+                <div id="social-buttons" class="align-content-center flex-fill py-1">
+                    <span class="px-1"><a href="https://www.facebook.com/developerict"><img src="img/icons/facebook.svg"/></a></span>
+                    <span class="px-1"><a href="https://bsky.app/profile/ictgamejam.bsky.social"><img src="img/icons/bluesky.svg"/></a></span>
+                    <span class="px-1"><a href="https://discord.gg/BUeHYVCQGr"><img src="img/icons/discord.svg"/></a></span>
+                    <span class="px-1"><a href="https://devict.slack.com/"><img src="img/icons/slack.svg"/></a></span>
+                    <!--<span class="mobile-mailchimp"><a data-toggle="collapse" href="#mc_expand" role="button" aria-expanded="false" aria-controls="mc_expand"><img src="img/icons/envelope-plus-fill.svg"/></a></span>-->
+                    <span class="default-mailchimp px-1"><a data-toggle="modal" data-target="#mc_modal" role="button" aria-expanded="false" aria-controls="mc_expand"><img src="img/icons/envelope-plus-fill.svg"/></a></span>
+                </div>
+            </div>
+        
+            <div class="container-fluid">
+                <div class="site-title">
+                    <div class="row px-4 pt-1 justify-content-left">
+                        <!-- Name/logo -->
+                        <span class="navbar-brand">
+                            <span style="font-weight: bold;">
+                                <span class="text-secondary">ICT</span>
+                                <span style="color: #337ab7;">GAMEJAM</span>
+                                <span class="text-secondary">.COM</span>
+                            </span>
+                        </span>
 
-        <ul class="social-buttons">
-            <li><a href="https://www.facebook.com/developerict"><img src="img/icons/facebook.svg"/></a></li>
-            <li><a href="https://bsky.app/profile/ictgamejam.bsky.social"><img src="img/icons/bluesky.svg"/></a></li>
-            <li><a href="https://discord.gg/BUeHYVCQGr"><img src="img/icons/discord.svg"/></a></li>
-            <li><a href="https://devict.slack.com/"><img src="img/icons/slack.svg"/></a></li>
-            <!--<li class="mobile-mailchimp"><a data-toggle="collapse" href="#mc_expand" role="button" aria-expanded="false" aria-controls="mc_expand"><img src="img/icons/envelope-plus-fill.svg"/></a></li>-->
-            <li class="default-mailchimp"><a data-toggle="modal" data-target="#mc_modal" role="button" aria-expanded="false" aria-controls="mc_expand"><img src="img/icons/envelope-plus-fill.svg"/></a></li>
-        </ul>
-        <div class="header-splash"> 
-            <div id="countdown-timer">How much longer until ICT Game Jam?</div>
-            <a class="header-splash-message" href="#section-previous"></a>
-        </div>
-        <ul class="nav">
-            <li class="nav-item" hidden>
-                <a class="btn-sm nav-link" href="#page-top">Top</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn-sm nav-link" href="#section-info">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn-sm nav-link" href="#section-schedule">Schedule</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn-sm nav-link" href="#section-location">Location</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn-sm nav-link" href="#section-register">Register</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn-sm nav-link" href="#section-previous">Previous</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn-sm nav-link" href="#section-devict">DevICT</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn-sm nav-link" href="#section-support">Support</a>
-            </li>
-        </ul>
-    </nav>
-    
-    <body class="index" style="height: 100%; position: relative; overflow-y: scroll !important;" data-spy="scroll" data-target="#navbar" data-offset="400">
-        <!-- Hero -->
-        <section id="page-top">
-            <header>
-                <div id="header-image-container" class="container">
-                    <div class="intro-text">
+                        <div class="d-flex align-content-center justify-content-around pt-2">
+                            <span>
+                                &nbsp;July 24th-26th
+                            </span>
+                        </div>
+
+                        <a class="btn btn-header p-2 mx-1" href="https://www.zeffy.com/en-US/ticketing/2026-winter-ict-game-jam">Buy a Ticket Now</a>
                     </div>
                 </div>
-                <div class="header-buttons">
-                    <a href="#section-info" class="page-scroll btn btn-xl" style="color:white;">What's a game jam?</a>
-                    <a href="#section-register" class="page-scroll btn btn-xl" style="color:white;">Buy a Ticket Now</a>
-                </div>
                 
-            </header>
-            <div id="mobile-header" class="container text-center">
-                <img src="img/header-bg-cropped.jpg" style="width: 100%;"/>
-                <a href="#section-info" class="page-scroll btn btn-xl" id="mobile-what-is-a-game-jam-button" style="color:white;">What's a game jam?</a>
-                <a href="#section-register" class="page-scroll btn btn-xl" id="mobile-buy-a-ticket-button"color:white;">Buy a Ticket Now</a>
+                <div class="row px-4 pb-2">
+                    <!-- Splash/countdown timer -->
+                    <div class="header-splash align-content-center"> 
+                        <div id="countdown-timer">How much longer until ICT Game Jam?</div>
+                        <a class="header-splash-message" href="#section-previous"></a>
+                    </div>
+                </div>
+
+                <ul id="navbar-tabs" class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a 
+                        class="btn-sm nav-link active" 
+                        data-toggle="tab" 
+                        data-target="#about-section"
+                        href="#about-section" 
+                        type="button" 
+                        role="tab"
+                        aria-controls="about-section"
+                        aria-selected="false"
+                        >
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a 
+                        class="btn-sm nav-link" 
+                        data-toggle="tab" 
+                        data-target="#schedule-section"
+                        href="#schedule-section" 
+                        type="button" 
+                        role="tab"
+                        aria-controls="schedule-section"
+                        aria-selected="false"
+                        >
+                            Schedule
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a 
+                        id="location-link"
+                        class="btn-sm nav-link" 
+                        data-toggle="tab" 
+                        data-target="#location-section"
+                        href="#location-section" 
+                        type="button" 
+                        role="tab"
+                        aria-controls="location-section"
+                        aria-selected="false"
+                        >
+                            Location
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a 
+                        class="btn-sm nav-link " 
+                        data-toggle="tab" 
+                        data-target="#devict-section" 
+                        href="#devict-section" 
+                        type="button" 
+                        role="tab"
+                        aria-controls="devict-section"
+                        aria-selected="false"
+                        >
+                            DevICT
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a 
+                        class="btn-sm nav-link" 
+                        data-toggle="tab" 
+                        data-target="#support-section" 
+                        href="#support-section" 
+                        type="button" 
+                        role="tab"
+                        aria-controls="support-section"
+                        aria-selected="false"
+                        >
+                            Support
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </section>
-        
-        <section id="section-info">
+        </nav>
+
+
+        <!-- Actual website content -->
             
-            <div class="container">
+        <section id="about-section" >
+            <!-- Info and buttons for this section-->
+            <div class="container-fluid collage-background-1">
+                <div class="row pb-4 pt-4">
+                    <div class="col-12 d-flex justify-content-center">
+                        <img class="hero-image" src="img/header-bg.png">
+                    </div>
+                </div>
+            </div>
+            <div class="container my-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center card">
+                        <a id="what-is-button" class="btn btn-info p-2 m-4" onclick="highlightAboutSectionTitle()" href="#what-is-button">What's a game jam?</a>
+                        <a class="btn btn-primary p-2 m-4" href="https://www.zeffy.com/en-US/ticketing/2026-winter-ict-game-jam">Buy a Ticket Now</a>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+            <div id="info-subsection" class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">It&rsquo;s a PARTY</h2>
+                        <h2 class="section-heading"><span id="about-title">It&rsquo;s a PARTY</span></h2>
                         <h3 class="section-subheading text-muted">
                         Ok, <strong>technically</strong> it&rsquo;s a competition with prizes. It&rsquo;s not a workshop or a class about making games. But if you want to spend a weekend learning game development and getting fed, you&rsquo;ll be in good company.
                         </h3>
@@ -171,21 +253,20 @@
                 </div>
             </div>
         </section>
-        
-        <br/><br/><hr/>
-        
-        <section id="section-schedule">
+
+        <section id="schedule-section">
             <div class="container">
+                <!-- Section title -->
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading">Schedule</h2>
                         <h3 class="section-subheading text-muted">Great! Now that you&#39;re going to the game jam, here&#39;s how the weekend will go...</h3>
                     </div>
                 </div>
-
+                <!-- Friday -->
                 <div class="row justify-content-center pb-4">
                     <div class="col-sm col-lg-3 align-content-center">
-                        <img class="img-circle img-responsive" src="img/schedule/rocket-launch.webp" alt="">
+                        <img class="img-circle img-responsive" src="img/schedule/kickoff.webp" alt="">
                     </div>
                     <div class="col-sm col-lg-7">
                         <h4>Friday</h4>
@@ -193,11 +274,11 @@
                         <p class="text-muted">Doors open at 11am and the event starts at noon!  There will be a small "hi, glad you're here, this is the theme" talk, with the main kickoff event happening at 6pm. Those needing teams will have an opportunity to pitch ideas and form or join teams as necessary.  You can even work solo if you want.  Three people are ideal, and we prefer teams to stay below 5.  <strong>Then it&rsquo;s time to start making games!</strong>  Work as long as you can, while staying healthy and safe!  You're welcome to work through the night, but we send people home around midnight.</p>
                     </div> 
                 </div>
-
+                <!-- Saturday -->
                 <div class="row justify-content-center pb-4">
                     <!-- Leverage bootstrap breakpoints to show the image on the left (above) when at XS breakpoint and hide that image when at any larger breakpoint -->
                     <div class="col-sm col-lg-3 d-block d-sm-none align-content-center">
-                        <img class="img-circle img-responsive" src="img/schedule/developer.webp" alt="">
+                        <img class="img-circle img-responsive" src="img/schedule/plan.webp" alt="">
                     </div>
                     <div class="col-sm col-lg-7">
                         <h4>Saturday</h4>
@@ -206,13 +287,13 @@
                     </div>
                     <!-- Leverage bootstrap breakpoints to hide the image on the right when at XS breakpoint and show that image when at any larger breakpoint -->
                     <div class="col-sm col-lg-3 d-none d-sm-block align-content-center">
-                        <img class="img-circle img-responsive" src="img/schedule/developer.webp" alt="">
+                        <img class="img-circle img-responsive" src="img/schedule/plan.webp" alt="">
                     </div>
                 </div>
-
+                <!-- Sunday -->
                 <div class="row justify-content-center pb-4">
                     <div class="col-sm col-lg-3 align-content-center">
-                        <img class="img-circle img-responsive" src="img/schedule/ship.webp" alt="">
+                        <img class="img-circle img-responsive" src="img/schedule/polish.webp" alt="">
                     </div>
                     <div class="col-sm col-lg-7">
                         <h4>Sunday</h4>
@@ -222,11 +303,11 @@
                         <p class="text-muted">At 1pm have Friends and Family come play your games!</p>
                     </div>
                 </div>
-
+                <!-- Beyond -->
                 <div class="row justify-content-center pb-4">
                     <!-- More bootstrap magic -->
                     <div class="col-sm col-lg-3 d-block d-sm-none align-content-center">
-                        <img class="img-circle img-responsive" src="img/schedule/coop.webp" alt="">
+                        <img class="img-circle img-responsive" src="img/schedule/playing.webp" alt="">
                     </div>
                     <div class="col-sm col-lg-7">
                         <h4>After that?</h4>
@@ -235,15 +316,13 @@
                     </div>
                     <!-- More bootstrap magic -->
                     <div class="col-sm col-lg-3 d-none d-sm-block align-content-center">
-                        <img class="img-circle img-responsive" src="img/schedule/coop.webp" alt="">
+                        <img class="img-circle img-responsive" src="img/schedule/playing.webp" alt="">
                     </div>
                 </div>
             </div>
         </section>
-        
-        <br/><br/><hr/>
 
-        <section id="section-location">
+        <section id="location-section">
             <div class="container">
                 <div class="row">
                     <br /><br />
@@ -257,225 +336,39 @@
                         <h3 class="section-heading" hidden>
                             Shocker Studios at WSU's South Campus<br><a href="https://maps.app.goo.gl/8fLTsQDXB3PEVh7H7">3803 E. Harry Street, Suite 121, Wichita, KS 67218</a>
                         </h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <br/><br/><hr/>
-
-        <section id="section-register">
-            <div class="container">
-                <div class="row" id="ticket">
-                    <br /><br />
-                    <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Buy a TICKET</h2>
-                    <p>This year we are using Zeffy because they do not charge us any fees as a non-profit organization!</p>
-                    <p><a class="btn btn-info" href="https://www.zeffy.com/en-US/ticketing/2026-winter-ict-game-jam">Zeffy devICT</a><br/></p>
-                    <p>All the money will be used to provide food for the event.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <br/><br/><hr/>
-
-        <!-- 
-        For post-winter updates:
-            * hide the championsContainer element
-            * un-hide the globalGameJamContainer element
-            * update the src and title of the livestreamPlayer element
-            * update the link for the globalGamesLink element
-        For post-summer updates:
-            * hide the globalGameJamContainer element
-            * un-hide the championsContainer element
-            * update the text of the championsHeaderText element
-            * add new photos of winners to img directory
-            * update the titles, img sources, and link detinations for the carousel items
-            * update the link for the ictGamesLink element (if necessary)
-        -->
-        <section id="section-previous">
-            <div class="container">
-
-                <!-- Hide this element after the winter game jam; show this element after the summer game jam-->
-                <div id="championsContainer" hidden>
-                    <div class="row text-center">
-                        <h2 id="championsHeaderText" class="section-heading">Summer 2025 Game Jam Winners</h2>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div hidden id="currentChampionsCarousel" class="carousel slide" data-ride="carousel">
-                            <!-- TODO: Figure out better way to get the gameplay images to be centered (probably best solved by taking game screenshots myself)-->
-                            <!-- Setting align-content-center causes jitter on the slide transition -->
-                            <div class="carousel-inner align-content-center">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="img/previous/winners/2025_July_1st_place_team_sm.webp" alt="Overbooked by Intestinal Regrets (team)">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>1st Place</h5>
-                                        <a href="https://jaedonwallace13.itch.io/overbooked">Overbooked by Intestinal Regrets</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="img/previous/winners/2025_July_1st_place_game_sm_c.webp" alt="Overbooked by Intestinal Regrets (gameplay)">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>1st Place</h5>
-                                        <a href="https://jaedonwallace13.itch.io/overbooked">Overbooked</a><p> by Intestinal Regrets</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="img/previous/winners/2025_July_2nd_place_team_sm.webp" alt="Mask Party by Team Josh">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>2nd Place</h5>
-                                        <a href="https://jscholldev.itch.io/mask-party">Mask Party by Team Josh</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="img/previous/winners/2025_July_2nd_place_game_sm.webp" alt="Mask Party by Team Josh">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>2nd Place</h5>
-                                        <a href="https://jscholldev.itch.io/mask-party">Mask Party by Team Josh</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="img/previous/winners/2025_July_3rd_place_team_sm.webp" alt="Masquerade About Secret Killing Society by Quit Da Sleep">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>3rd Place</h5>
-                                        <a href="https://qds.itch.io/masquerade-about-secret-killing-society">Masquerade About Secret Killing Society by Quit Da Sleep</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="img/previous/winners/2025_July_3rd_place_game_sm_c.webp" alt="Masquerade About Secret Killing Society by Quit Da Sleep">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>3rd Place</h5>
-                                        <a href="https://qds.itch.io/masquerade-about-secret-killing-society">Masquerade About Secret Killing Society by Quit Da Sleep</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-target="#currentChampionsCarousel" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-target="#currentChampionsCarousel" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>   
-                            </button>       
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-12">
-                            <p>Be sure to also check out all the other games on Itch.io created by our talented particpants!</p>
-                            <a href="https://itch.io/jam/ict-game-jam">ICT Game Jam Games</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Show this element after the winter game jam; hide this element after the summer game jam-->
-                <div id="globalGameJamContainer">
-                    <div class="row text-center justify-content-center">
-                        <h2 id="livestreamHeaderText" class="section-heading">See us in the GGJ live stream!</h2>
-                    </div>
-                    <div class="row justify-content-center">
-                        <iframe
-                            id="livestreamPlayer"
-                            src="https://www.youtube.com/embed/DDsTxal4jgw?si=gIq6fbtKPwgT0u2z&amp;start=1797"
-                            title="GGJ Live Stream 2026 Sunday"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen
-                        >
-                        </iframe>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col-12">
-                            <p>Don't for get to visit the Global Game Jam website to download and play the games made during the event!</p>
-                            <a id="globalGamesLink" href="https://globalgamejam.org/group/31458/games">Global Game Jam (ICT Game Jam Games)</a>
-                        </div>
-
-                    </div>
-                </div>
-                
-                <br/><br/>
-
-                <div class="row text-center justify-content-center">
-                    <h2 class="section-heading">See you at the next jam!</h2>
-                </div>
-                <div class="row justify-content-center align-content-center">
-                    <div id="previousJamPhotosCarousel" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                            <img class="d-block w-100" src="img/previous/2026_Jan_3_sm.webp" alt="January 2026 ICT Game Jam Photo 3">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2026_Jan_4_sm.webp" alt="January 2026 ICT Game Jam Photo 4">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2026_Jan_1_sm.webp" alt="January 2026 ICT Game Jam Photo 1">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2026_Jan_2_sm.webp" alt="January 2026 ICT Game Jam Photo 2">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2025_July_1_sm.webp" alt="July 2025 ICT Game Jam Photo 1">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2025_July_2_sm.webp" alt="July 2025 ICT Game Jam Photo 2">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2025_July_3_sm.webp" alt="July 2025 ICT Game Jam Photo 3">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2025_July_4_sm.webp" alt="July 2025 ICT Game Jam Photo 4">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2025_July_5_sm.webp" alt="July 2025 ICT Game Jam Photo 5">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2023_Feb_1_sm.webp" alt="February 2023 ICT Game Jam Photo 1">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2023_Feb_2_sm.webp" alt="February 2023 ICT Game Jam Photo 2">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2017_Feb_1_sm.webp" alt="February 2017 ICT Game Jam Photo 1">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2017_Feb_2_sm.webp" alt="February 2017 ICT Game Jam Photo 2">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2017_Feb_3_sm.webp" alt="February 2017 ICT Game Jam Photo 3">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2017_July_1_sm.webp" alt="July 2017 ICT Game Jam Photo 1">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2017_July_2_sm.webp" alt="July 2017 ICT Game Jam Photo 2">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2016_1_sm.webp" alt="2016 ICT Game Jam Photo 1">
-                            </div>    
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2015_1_sm.webp" alt="2015 ICT Game Jam Photo 1">
-                            </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="img/previous/2015_2_sm.webp" alt="2015 ICT Game Jam Photo 2">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-target="#previousJamPhotosCarousel" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-target="#previousJamPhotosCarousel" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>   
-                        </button>       
+                        <div id="location-map"></div>
+                        <!-- Update the center value after each game jam -->
+                        <script type="text/javascript">
+                            /* Control the location on the map using the below const definitions */
+                            // uncomment this line after the winter game jam
+                            const latLng = [37.70768087710465, -97.12753791349064]
+                            // uncomment this line after the summer game jam
+                            //const latLng = [37.66303632737492, -97.2911476950105]
+                            
+                            /* Set up map using specified location */
+                            // initialize the map centered on the location of the event
+                            var map = L.map('location-map', {
+                                center: latLng,
+                                zoom: 13
+                            });
+                            // add open streets tile layer so the map actually looks like a map
+                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                maxZoom: 19,
+                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                            }).addTo(map);
+                            // re-draw the map when the location-link is navigated to (solves issue where open streets tiles do not load due to being in a hidden element initially)
+                            $('body').on('shown.bs.tab', '#location-link', function() {
+                                map.invalidateSize(false);
+                            });
+                            // add pop-up to show where the event is located exactly
+                            L.marker(latLng).addTo(map).bindPopup('Butler Community College').openPopup();
+                        </script>
                     </div>
                 </div>
             </div>
         </section>
 
-        <br/><br/><hr/>
-
-        <section id="section-devict">
+        <section id="devict-section">
             <div class="container">
                 <div class="row text-center justify-content-center">
                     <h2 class="section-heading">Meet the ICT Game Jam team!</h2>
@@ -518,9 +411,8 @@
                 </div>
             </div>
         </section>
-        <hr/>
 
-        <section id="section-support">
+        <section id="support-section">
             <div class="container">
                 <div class="row pb-5">
                     <div class="col-lg-12 text-center">
@@ -536,119 +428,133 @@
                         <img class="img-fluid sponsorship-handout" src="img/sponsorship/handout-2.webp" alt="Sponsorship packages handout page 2."/>
                     </div>
                 </div>
-                
-                <div class="row pt-5">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Thanks to our amazing sponsors!</h2>
-                        <h3 class="section-subheading text-muted">Their support makes this event possible!</h3>
-                    </div>
+            </div>
+        </section>
+        
+
+        <footer class="container">
+            <hr>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Thanks to our amazing sponsors!</h2>
+                    <h3 class="section-subheading text-muted">Their support makes this event possible!</h3>
                 </div>
-                <div class="row text-center justify-content-center">
+            </div>
+            <div class="row text-center justify-content-center">
                     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 align-content-center sponsor-logo">
                         <a href="https://www.redbull.com/us-en">
                             <img src="img/logos/red-bull-logo-240.webp" class="img-responsive img-centered" alt="Red Bull">
                         </a>
                     </div>
-                    
                     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 align-content-center sponsor-logo">
                         <a href="https://www.bawls.com/">
                             <img src="img/logos/bawls-logo-240.webp" class="img-responsive img-centered" alt="Bawls Guarana">
                         </a>
                     </div>
-
                     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 align-content-center sponsor-logo">
                         <a href="https://www.netapp.com/company/">
                             <img src="img/logos/netapp-logo-240.webp" class="img-responsive img-centered" alt="Net App">
                         </a>
                     </div>
-                    
                     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 align-content-center sponsor-logo">
                         <a href="https://ideatek.com//">
                             <img src="img/logos/ideatek-logo-240.webp" class="img-responsive img-centered" alt="Ideatek">
                         </a>
                     </div>
-                    
                     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 align-content-center sponsor-logo">
                         <a href="https://www.malaysiacafewichita.com/home">
                             <img src="img/logos/malaysia-cafe-logo-240.webp" class="img-responsive img-centered" alt="Malaysia Cafe">
                         </a>
                     </div>
-
                     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 align-content-center sponsor-logo">
                         <a href="https://www.wichita.edu/academics/fine_arts/digital_arts/shocker_studios.php">
                             <img src="img/logos/shocker-studios-240.webp" class="img-responsive img-centered" alt="Wichita State University Shocker Studios">
                         </a>
                     </div>
-
                     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 align-content-center sponsor-logo">
                         <a href="https://www.wichita.edu/industry_and_defense/NIAR/">
                             <img src="img/logos/niar-logo-240.webp" class="img-responsive img-centered" alt="National Institute for Aviation Research">
                         </a>
                     </div>
-
                     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 align-content-center sponsor-logo">
                         <a href="https://www.butlercc.edu/">
                             <img src="img/logos/butler-240.webp" class="img-responsive img-centered" alt="Butler Community College">
                         </a>
                     </div>
-
                     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 align-content-center sponsor-logo">
                         <a href="https://www.barrettmorgandesignllc.com/">
                             <img src="img/logos/bnm-logo.webp" class="img-responsive img-centered" alt="Barrett Morgan Design, LLC">
                         </a>
                     </div>
-        
                     <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 align-content-center sponsor-logo">
                         <a href="https://bullercodeworks.com/">
                             <img src="img/logos/bcw_icon-260.png" class="img-responsive img-centered" alt="Buller Codeworks, LLC">
                         </a>
                     </div>
                 </div>
-            </div>
-        </section>
-    </body>
-    
-    <div id="mc_modal" class="modal" tabindex="-1" role="dialog">
-        <div" class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body container-fluid">
-                    <div style="justify-self: right">
-                        <span style="justify-self: right;">Want to contact us?</span>
-                        <span style="justify-self: right;"><a href="mailto:ictgamejam@devict.org">Email ICT Game Jam</a></span>
-                        <span style="justify-self: right;">or...</span>
-                    </div>
-                    <!-- Begin Mailchimp Signup Form -->
-                    <div id="mc_embed_signup" style="justify-self: right">
-                        <form action="https://ictgamejam.us18.list-manage.com/subscribe/post?u=2b3b0acf9f47c5036d0129c5f&amp;id=c888eeef58&amp;f_id=001b24e7f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                            <div id="mc_embed_signup_scroll">
-                                <h2>Subscribe To Our Mailing List</h2>
-                                <p>We send out about one newsletter a month, the main purpose of which is to help you remember when the next ICT Game Jam is happening.</p>
-                                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                                <div class="mc-field-group">
-                                    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-                                </label>
-                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
-                                    <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-                                </div>
-                                <div id="mce-responses" class="clear foot">
-                                    <div class="response" id="mce-error-response" style="display:none"></div>
-                                    <div class="response" id="mce-success-response" style="display:none"></div>
-                                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2b3b0acf9f47c5036d0129c5f_c888eeef58" tabindex="-1" value=""></div>
-                                <div class="optionalParent">
-                                    <div class="clear foot">
-                                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                                        <p class="brandingLogo"><a href="http://eepurl.com/h9fXpP" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+        </footer>
+
+        <script>
+            jQuery(document).ready(function($) {
+                $('#navbar-tabs a').click(function(e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+
+                // store the currently selected tab in the hash value
+                $("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
+                    var id = $(e.target).attr("href").substr(1);
+                    window.location.hash = id;
+                });
+
+                // on load of the page: switch to the currently selected tab
+                var hash = window.location.hash;
+                $('#navbar-tabs a[href="' + hash + '"]').tab('show');
+            });
+        </script>
+
+        <!-- Mail Chimp sign-up modal-->
+        <div id="mc_modal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body container-fluid">
+                        <div style="justify-self: right">
+                            <span style="justify-self: right;">Want to contact us?</span>
+                            <span style="justify-self: right;"><a href="mailto:ictgamejam@devict.org">Email ICT Game Jam</a></span>
+                            <span style="justify-self: right;">or...</span>
+                        </div>
+                        <!-- Begin Mailchimp Signup Form -->
+                        <div id="mc_embed_signup" style="justify-self: right">
+                            <form action="https://ictgamejam.us18.list-manage.com/subscribe/post?u=2b3b0acf9f47c5036d0129c5f&amp;id=c888eeef58&amp;f_id=001b24e7f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                <div id="mc_embed_signup_scroll">
+                                    <h2>Subscribe To Our Mailing List</h2>
+                                    <p>We send out about one newsletter a month, the main purpose of which is to help you remember when the next ICT Game Jam is happening.</p>
+                                    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                    <div class="mc-field-group">
+                                        <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
+                                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+                                        <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                                    </div>
+                                    <div id="mce-responses" class="clear foot">
+                                        <div class="response" id="mce-error-response" style="display:none"></div>
+                                        <div class="response" id="mce-success-response" style="display:none"></div>
+                                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2b3b0acf9f47c5036d0129c5f_c888eeef58" tabindex="-1" value=""></div>
+                                    <div class="optionalParent">
+                                        <div class="clear foot">
+                                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                            <p class="brandingLogo"><a href="http://eepurl.com/h9fXpP" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
+                        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+                        <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                        <!--End mc_embed_signup-->
                     </div>
-                    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-                    <script defer type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-                    <!--End mc_embed_signup-->
                 </div>
             </div>
         </div>
-    </div>
+    </body>
 </html>
