@@ -5,7 +5,7 @@
   --secondary-color: #B68DAB;
   --secondary-color-hover: #976b8b;
   --background-color: #FFFFFF;
-  --background-color-alt: #EDEDED;
+  --background-color-header: #EDEDED;
 }
 
 /* Default styling */
@@ -20,7 +20,8 @@ section {
 
 .btn {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;*/    
+    font-family: "Bungee", sans-serif;
     font-weight: 700;
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -40,7 +41,7 @@ section {
 }
 
 #header {
-    background-color: var(--background-color-alt);
+    background-color: var(--background-color-header);
 }
 
 .site-title {
@@ -60,11 +61,16 @@ section {
 }
 
 .btn-header {
-    color: var(--background-color);
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    color: var(--secondary-color);
+    background-color: var(--background-color-header);
+    border-color: var(--background-color-header);
     border-radius: 5%;
     height: 70%;
+    font-family: "Bungee Shade", "Bungee", sans-serif;
+}
+.btn-header:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
 .nav-link {
@@ -109,6 +115,14 @@ section {
     border-radius: 15rem;
     opacity: 93%;
     background-color: var(--background-color);
+}
+
+.section-heading {
+    font-family: "Bungee", sans-serif;
+}
+
+.section-subheading {
+    font-family: sans-serif;
 }
 
 #location-map {
