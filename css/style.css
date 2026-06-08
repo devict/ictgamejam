@@ -1,3 +1,13 @@
+/* Theming */
+:root {
+  --primary-color: #8CBE9D;
+  --primary-color-hover: #699f7b;
+  --secondary-color: #B68DAB;
+  --secondary-color-hover: #976b8b;
+  --background-color: #FFFFFF;
+  --background-color-alt: #EDEDED;
+}
+
 /* Default styling */
 html {
     scroll-behavior: smooth;
@@ -12,15 +22,35 @@ section {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn:hover {
+    background-color: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--secondary-color-hover);
+    border-color: var(--secondary-color-hover);
 }
 
 #header {
-    background-color: #EDEDED;
+    background-color: var(--background-color-alt);
 }
 
 .site-title {
     width: 75%;
     margin-right: 25%;
+}
+
+.title-text-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .social-buttons-container {
@@ -30,14 +60,11 @@ section {
 }
 
 .btn-header {
-    color:white;
-    background-color: #007bff;
+    color: var(--background-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
     border-radius: 5%;
     height: 70%;
-}
-
-.nav {
-    
 }
 
 .nav-link {
@@ -46,6 +73,14 @@ section {
 
 .nav-tabs {
     justify-content: space-evenly;
+}
+
+.nav-item {
+    color: var(--secondary-color);
+    font-weight: 1000;
+}
+.nav-item:hover {
+    color: var(--secondary-color-hover);
 }
 
 .navbar-brand {
@@ -73,6 +108,7 @@ section {
     max-height: 40vh;
     border-radius: 15rem;
     opacity: 93%;
+    background-color: var(--background-color);
 }
 
 #location-map {
@@ -90,6 +126,17 @@ section {
 }
 .sponsor-logo a img {
     max-width: 100%;
+}
+
+/* Hacky fix for the about section icon colors */
+.fa {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    border-radius: 100%;
+}
+.fa-inverse{
+    background-color: var(--primary-color);
+    color: var(--background-color);
 }
 
 /* Styling for views larger than 992px (mainlg desktops) */
