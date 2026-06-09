@@ -64,7 +64,7 @@
         <nav id="header" class="w-100 fixed-top">               
             <!-- Social buttons -->
             <!-- These need to stay in the top right, while the other header elements can flex align in the fluid container -->
-            <div class="social-buttons-container d-flex">
+            <div class="social-buttons-container">
                 <div id="social-buttons" class="align-content-center flex-fill py-1">
                     <span class="px-1"><a href="https://www.facebook.com/developerict"><img src="img/icons/facebook.svg"/></a></span>
                     <span class="px-1"><a href="https://bsky.app/profile/ictgamejam.bsky.social"><img src="img/icons/bluesky.svg"/></a></span>
@@ -76,28 +76,27 @@
             </div>
         
             <div class="container-fluid">
-                <div class="site-title">
-                    <div class="row px-4 pt-1 justify-content-left">
-                        <!-- Name/logo -->
-                        <span class="navbar-brand">
-                            <span style="font-weight: bold;">
-                                <span class="text-secondary">ICT</span>
-                                <span class="title-text-primary">GAMEJAM</span>
-                                <span class="text-secondary">.COM</span>
-                            </span>
+                <div class="site-title row pt-1 justify-content-left">
+                    <!-- Name/logo -->
+                    <span class="navbar-brand">
+                        <span style="font-weight: bold;">
+                            <span class="text-secondary">ICT</span>
+                            <span class="title-text-primary">GAMEJAM</span>
+                            <span class="text-secondary">.COM</span>
                         </span>
+                    </span>
 
-                        <div class="d-flex align-content-center justify-content-around pt-2">
-                            <span>
-                                &nbsp;July 24th-26th
-                            </span>
-                        </div>
-
-                        <a class="btn btn-header p-2 mx-1" href="https://www.zeffy.com/en-US/ticketing/2026-summer-ict-game-jam">Buy a Ticket Now</a>
+                    <div class="d-flex align-content-center justify-content-around pt-2">
+                        <span>
+                            &nbsp;July 24th-26th
+                        </span>
                     </div>
+
+                    <a class="btn btn-header p-2" href="https://www.zeffy.com/en-US/ticketing/2026-summer-ict-game-jam">Buy a Ticket Now</a>
                 </div>
                 
-                <div class="row px-4 pb-2">
+                
+                <div class="countdown-container row pb-2">
                     <!-- Splash/countdown timer -->
                     <div class="header-splash align-content-center"> 
                         <div id="countdown-timer">How much longer until ICT Game Jam?</div>
@@ -107,7 +106,7 @@
 
                 <ul id="navbar-tabs" class="nav nav-tabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <btn 
+                        <a 
                         class="btn-sm nav-link active" 
                         data-toggle="tab" 
                         data-target="#about-section"
@@ -118,10 +117,10 @@
                         aria-selected="false"
                         >
                             About
-                        </btn>
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <btn 
+                        <a 
                         class="btn-sm nav-link" 
                         data-toggle="tab" 
                         data-target="#schedule-section"
@@ -132,10 +131,10 @@
                         aria-selected="false"
                         >
                             Schedule
-                        </btn>
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <btn 
+                        <a 
                         id="location-link"
                         class="btn-sm nav-link" 
                         data-toggle="tab" 
@@ -147,10 +146,10 @@
                         aria-selected="false"
                         >
                             Location
-                        </btn>
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <btn 
+                        <a 
                         class="btn-sm nav-link " 
                         data-toggle="tab" 
                         data-target="#devict-section" 
@@ -161,10 +160,10 @@
                         aria-selected="false"
                         >
                             DevICT
-                        </btn>
+                        </a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <btn 
+                        <a 
                         class="btn-sm nav-link" 
                         data-toggle="tab" 
                         data-target="#support-section" 
@@ -175,7 +174,7 @@
                         aria-selected="false"
                         >
                             Support
-                        </btn>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -187,7 +186,7 @@
         <section id="about-section" >
             <!-- Info and buttons for this section-->
             <div class="container-fluid collage-background-1">
-                <div class="row pb-4 pt-4">
+                <div class="row py-4 ">
                     <div class="col-12 d-flex justify-content-center">
                         <img class="hero-image" src="img/header.webp">
                     </div>

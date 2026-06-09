@@ -14,7 +14,7 @@ html {
 }
 
 section {
-    padding-top: 110px;
+    padding-top: 140px;
     padding-bottom: 100px;
 }
 
@@ -47,6 +47,7 @@ section {
 .site-title {
     width: 75%;
     margin-right: 25%;
+    padding-left: 2rem;
 }
 
 .title-text-primary {
@@ -63,30 +64,34 @@ section {
 .btn-header {
     color: var(--secondary-color);
     background-color: var(--background-color-header);
-    border-color: var(--background-color-header);
+    border-color: var(--secondary-color);
+    border-style: dashed;
     border-radius: 5%;
     height: 70%;
     font-family: "Bungee Shade", "Bungee", sans-serif;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 .btn-header:hover {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
 }
 
+.countdown-container {
+    padding-left: 2rem;
+}
+
 .nav-link {
     font-size: 2vw;
+    color: var(--secondary-color);
+    font-weight: 1000;
+}
+.nav-link:hover {
+    color: var(--secondary-color-hover);
 }
 
 .nav-tabs {
     justify-content: space-evenly;
-}
-
-.nav-item {
-    color: var(--secondary-color);
-    font-weight: 1000;
-}
-.nav-item:hover {
-    color: var(--secondary-color-hover);
 }
 
 .navbar-brand {
@@ -177,6 +182,12 @@ section {
     #social-buttons span a, #social-buttons span a img {
         height: 24px;
     }
+    
+    /* Use more of the horizontal space in the header at lower screen widths */
+    .btn-header {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
 
 /* Styling for views smaller than 576px (mobile devices) */
@@ -202,8 +213,28 @@ section {
         height: 16px;
     }
 
-    /* Place social buttons against left side when screen gets smaller so it looks cleaner when they jump down to the second row */
+    /* Place social buttons in vertical stack at lower screen widths and adjust width accordingly */
     #social-buttons {
         justify-content: flex-start !important;
+        flex-direction: column;
+        display: grid;
+        width: 5%;
+    }
+    .social-buttons-container {
+        justify-content: flex-end;
+        display: grid;
+    }
+    .site-title {
+        width: 95%;
+        margin-right: 5%;
+    }
+
+    /* Use more of the horizontal space in the header at lower screen widths */
+    .site-title {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .countdown-container {
+        padding-left: 5px;
     }
 }
