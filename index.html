@@ -60,6 +60,29 @@
     </head>
 
     <body>
+        <!-- 
+        Website update steps: 
+            1. Update the color variables for the root element in style.css
+            2. Update the countDownDate variable in countdown-timer.js 
+            3. Update the date text in the event-date-container element
+            4. Update the href value for the header-buy-ticket-button element
+            5. Update the href value for the about-section-buy-ticket-button element
+
+            For an upcoming winter jam:
+                Add a hidden tag to the summer-jam-location-text element
+                Remove the hidden tag from the winter-jam-location-text element
+                Remove the hidden tag from the global-game-jam-section element
+                Comment out the javascript line `const latLng = [37.70768087710465, -97.12753791349064]`
+                Uncomment the javascript line `const latLng = [37.66303632737492, -97.2911476950105]`
+
+            For an upcoming summer jam:
+                Remove the hidden tag from the summer-jam-location-text element
+                Add a hidden tag to the winter-jam-location-text element
+                Add a hidden tag to the global-game-jam-section element
+                Uncomment the javascript line `const latLng = [37.70768087710465, -97.12753791349064]`
+                Comment out the javascript line `const latLng = [37.66303632737492, -97.2911476950105]`
+        -->
+
         <!-- Navigation for the website's content  -->
         <nav id="header" class="w-100 fixed-top">               
             <!-- Social buttons -->
@@ -86,13 +109,13 @@
                         </span>
                     </span>
 
-                    <div class="d-flex align-content-center justify-content-around pt-2">
+                    <div id="event-date-container" class="d-flex align-content-center justify-content-around pt-2">
                         <span>
                             &nbsp;July 24th-26th
                         </span>
                     </div>
 
-                    <a class="btn btn-header p-2" href="https://www.zeffy.com/en-US/ticketing/2026-summer-ict-game-jam">Buy a Ticket Now</a>
+                    <a id="header-buy-ticket-button" class="btn btn-header p-2" href="https://www.zeffy.com/en-US/ticketing/2026-summer-ict-game-jam">Buy a Ticket Now</a>
                 </div>
                 
                 
@@ -196,7 +219,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center card">
                         <a id="what-is-button" class="btn btn-info p-2 m-4 btn-primary" onclick="highlightAboutSectionTitle()" href="#what-is-button">What's a game jam?</a>
-                        <a class="btn p-2 m-4 btn-secondary" href="https://www.zeffy.com/en-US/ticketing/2026-summer-ict-game-jam">Buy a Ticket Now</a>
+                        <a id="about-section-buy-ticket-button" class="btn p-2 m-4 btn-secondary" href="https://www.zeffy.com/en-US/ticketing/2026-summer-ict-game-jam">Buy a Ticket Now</a>
                     </div>
                 </div>
             </div>
@@ -328,11 +351,11 @@
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading">Location</h2>
                         <!-- Hide this element after the winter game jam -->
-                        <h3 class="section-heading">
+                        <h3 id="summer-jam-location-text" class="section-heading">
                             Butler Community College Andover Campus<br><a href="https://goo.gl/maps/CmRmpSojvmSnkxEP8">715 East 13th Street, Andover, KS 67002</a>
                         </h3>
                         <!-- Un-hide this element after the summer game jam -->
-                        <h3 class="section-heading" hidden>
+                        <h3 id="winter-jam-location-text" class="section-heading" hidden>
                             Shocker Studios at WSU's South Campus<br><a href="https://maps.app.goo.gl/8fLTsQDXB3PEVh7H7">3803 E. Harry Street, Suite 121, Wichita, KS 67218</a>
                         </h3>
                         <div id="location-map"></div>
@@ -394,18 +417,20 @@
                         </a>
                     </div>
                 </div>
-                <div class="row text-center justify-content-center">
-                    <h3 class="section-subheading">ICT Game Jam is a Jam Site for The Global Game Jam!</h3>
-                    
-                </div>
-                <div class="row text-center justify-content-center">
-                    <h6>Learn more by clicking the image below:</h6>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-sm-2" style="display: flex; justify-content: center;">
-                        <a href="https://globalgamejam.org/jam-sites/2025/ict-game-jam">
-                            <img src="img/logos/global_game_jam_260.webp" class="img-responsive img-centered" alt="Global Game Jam">
-                        </a>
+                <div hidden id="global-game-jam-section">
+                    <div class="row text-center justify-content-center">
+                        <h3 class="section-subheading">ICT Game Jam is a Jam Site for The Global Game Jam!</h3>
+                        
+                    </div>
+                    <div class="row text-center justify-content-center">
+                        <h6>Learn more by clicking the image below:</h6>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-2" style="display: flex; justify-content: center;">
+                            <a href="https://globalgamejam.org/jam-sites/2025/ict-game-jam">
+                                <img src="img/logos/global_game_jam_260.webp" class="img-responsive img-centered" alt="Global Game Jam">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -418,7 +443,7 @@
                         <h2 class="section-heading">Support ICT Game Jam</h2>
                         <h3 class="section-subheading">Check out the games from previous events on our <a href="https://ictgamejam.itch.io">Itch.io page</a>!</h3>
                         <h3 class="section-subheading text-muted">The best way to help is to
-                        participate!  Otherwise, we welcome volunteered time or talent in any amount before, during or after the event.<br /><br />Finally, if you absolutely insist, here are some sponsorship packages to consider! For all these, please contact <a href="mailto:ictgamejam@devict.org">ictgamejam@devict.org</a>.<br><br>This and other Wichita game development events are operated under <a href="https://devict.org/">devICT</a>, a 501c3 organization.  All donations are used to run this and future game development events.</h3>
+                        participate!  Otherwise, we welcome volunteered time or talent in any amount before, during, or after the event.<br /><br />Finally, if you absolutely insist, here are some sponsorship packages to consider! For all these, please contact <a href="mailto:ictgamejam@devict.org">ictgamejam@devict.org</a>.<br><br>This and other Wichita game development events are operated under <a href="https://devict.org/">devICT</a>, a 501c3 organization.  All donations are used to run this and future game development events.</h3>
                     </div>
                     <div class="col-lg-6 pb-2">
                         <img class="img-fluid sponsorship-handout" src="img/sponsorship/handout-1.webp" alt="Sponsorship packages handout page 1."/>
