@@ -98,6 +98,7 @@ section {
 
 .navbar-brand {
     word-wrap: normal;
+    margin-right: 0px;
 }
 
 .img-circle {
@@ -251,7 +252,13 @@ section {
         height: 16px;
     }
 
-    /* Place social buttons in vertical stack at lower screen widths and adjust width accordingly */
+    /* Free up a bit of extra horizontal space for the social buttons */
+    #event-date-container {
+        font-size: 3.5vw;
+        margin-top: 5px;
+    }
+
+    /* Place social buttons in a grid at lower screen widths and adjust width accordingly */
     #social-buttons {
         justify-content: flex-start !important;
         flex-direction: column;
