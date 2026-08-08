@@ -257,10 +257,10 @@ section {
         flex-direction: column;
         display: grid;
         width: 5%;
+        grid-template-columns: 20px 20px 20px;
     }
     .social-buttons-container {
         display: block;
-        columns: 1px 3;
         width: 20%;
         padding-right: 30px;
         padding-top: 10px;
