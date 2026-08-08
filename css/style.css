@@ -230,8 +230,12 @@ section {
     }
 
     /* Prevent nav items from taking up too much horizontal space at lower screen widths */
+    .nav-item {
+        margin-left: -1px !important;
+        margin-right: -1px !important;
+    }
     .nav-link {
-        padding: 0.5rem 0.5rem;
+        padding: 0.2rem 0.2rem;
         font-size: 3vw;
     }
 
