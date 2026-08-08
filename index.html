@@ -29,7 +29,7 @@
         <script src="js/bootstrap-v4.6.2/bootstrap.min.js"></script>
 
         <!-- LeafletJS -->
-         <script src="js/leaflet/leaflet.js"></script>
+        <script src="js/leaflet/leaflet.js"></script>
 
         <!-- Custom JS -->
         <script src="js/countdown-timer.js"></script>
@@ -84,7 +84,7 @@
         -->
 
         <!-- Navigation for the website's content  -->
-        <nav id="header" class="w-100 fixed-top">               
+        <nav id="header" class="w-100 fixed-top pt-1">               
             <!-- Social buttons -->
             <!-- These need to stay in the top right, while the other header elements can flex align in the fluid container -->
             <div class="social-buttons-container">
@@ -111,19 +111,19 @@
 
                     <div id="event-date-container" class="d-flex align-content-center justify-content-around pt-2">
                         <span>
-                            &nbsp;July 24th-26th
+                            &nbsp;Jan 29th-31th
                         </span>
                     </div>
 
-                    <a id="header-buy-ticket-button" class="btn btn-header p-2" href="https://www.zeffy.com/en-US/ticketing/2026-summer-ict-game-jam">Buy a Ticket Now</a>
+                    <a hidden id="header-buy-ticket-button" class="btn btn-header p-2" href="https://www.zeffy.com/en-US/ticketing/2026-summer-ict-game-jam">Buy a Ticket Now</a>
                 </div>
                 
                 
                 <div class="countdown-container row pb-2">
                     <!-- Splash/countdown timer -->
                     <div class="header-splash align-content-center"> 
-                        <div id="countdown-timer">How much longer until ICT Game Jam?</div>
-                        <a class="header-splash-message" href="#section-previous"></a>
+                        <div hidden id="countdown-timer">How much longer until ICT Game Jam?</div>
+                        <a class="header-splash-message" href="#previous-section">Congrats to our Summer 2026 Winning Game: BABOOM! by Team Monke</a>
                     </div>
                 </div>
 
@@ -169,6 +169,20 @@
                         aria-selected="false"
                         >
                             Location
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a 
+                        class="btn-sm nav-link " 
+                        data-toggle="tab" 
+                        data-target="#previous-section" 
+                        href="#previous-section" 
+                        type="button" 
+                        role="tab"
+                        aria-controls="previous-section"
+                        aria-selected="false"
+                        >
+                            Previous
                         </a>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -223,8 +237,6 @@
                     </div>
                 </div>
             </div>
-        
-
         
             <div id="info-subsection" class="container">
                 <div class="row">
@@ -363,9 +375,9 @@
                         <script type="text/javascript">
                             /* Control the location on the map using the below const definitions */
                             // uncomment this line after the winter game jam
-                            const latLng = [37.70768087710465, -97.12753791349064]
+                            //const latLng = [37.70768087710465, -97.12753791349064]
                             // uncomment this line after the summer game jam
-                            //const latLng = [37.66303632737492, -97.2911476950105]
+                            const latLng = [37.66303632737492, -97.2911476950105]
                             
                             /* Set up map using specified location */
                             // initialize the map centered on the location of the event
@@ -383,8 +395,91 @@
                                 map.invalidateSize(false);
                             });
                             // add pop-up to show where the event is located exactly
-                            L.marker(latLng).addTo(map).bindPopup('Butler Community College').openPopup();
+                            // uncomment this line after the winter game jam
+                            //L.marker(latLng).addTo(map).bindPopup('Butler Community College').openPopup();
+                            // uncomment this line after the summer game jam
+                            L.marker(latLng).addTo(map).bindPopup('WSU Shocker Studios').openPopup();
                         </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="previous-section">
+            <div class="container">
+                <div class="row justify-content-center align-content-center">
+                    <!-- Hide this element after the winter game jam; show this element after the summer game jam-->
+                    <div id="championsContainer">
+                        <div class="row text-center justify-content-center">
+                            <h2 id="championsHeaderText" class="section-heading">Summer 2026 Game Jam Winners</h2>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div id="currentChampionsCarousel" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner align-content-center">
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="img/previous/winners/2026_July_1st_place_team_sm.webp" alt="BABOOM! by Monke (team photo)">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>1st Place</h5>
+                                            <a href="https://zombiepi.itch.io/baboom">BABOOM! by Monke</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://zombiepi.itch.io/baboom">
+                                            <img class="d-block w-100" src="img/previous/winners/2026_July_1st_place_game_sm.webp" alt="BABOOM! by Monke (gameplay image)">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="img/previous/winners/2026_July_2nd_place_team_sm.webp" alt="Hot Reels by Glurima (team photo)">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>2nd Place</h5>
+                                            <a href="https://charleyfindling.itch.io/hot-reels">Hot Reels by Glurima</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://charleyfindling.itch.io/hot-reels">
+                                            <img class="d-block w-100" src="img/previous/winners/2026_July_2nd_place_game_sm.webp" alt="Hot Reels by Glurima (gameplay image)">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="img/previous/winners/2026_July_3rd_place_team_sm.webp" alt="Bad Tanks by Team Strawberry (team photo)">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>3rd Place</h5>
+                                            <a href="https://catourney.itch.io/bad-tanks">Bad Tanks by Team Strawberry</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://catourney.itch.io/bad-tanks">
+                                            <img class="d-block w-100" src="img/previous/winners/2026_July_3rd_place_game_sm.webp" alt="Bad Tanks by Team Strawberry (gameplay image)">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-target="#currentChampionsCarousel" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </button>
+
+                                <button class="carousel-control-next" type="button" data-target="#currentChampionsCarousel" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>   
+                                </button>       
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Show this element after the winter game jam; hide this element after the summer game jam-->
+                    <!-- TODO: carousel of normal pictures for post-winter jam -->
+
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <p>Be sure to also check out all the other games on Itch.io created by our talented particpants!</p>
+                            <a href="https://itch.io/jam/ict-game-jam">ICT Game Jam Games</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -417,7 +512,7 @@
                         </a>
                     </div>
                 </div>
-                <div hidden id="global-game-jam-section">
+                <div id="global-game-jam-section">
                     <div class="row text-center justify-content-center">
                         <h3 class="section-subheading">ICT Game Jam is a Jam Site for The Global Game Jam!</h3>
                         

@@ -58,7 +58,9 @@ section {
 .social-buttons-container {
     position: absolute; 
     right: 0;
-    width: 25%;
+    width: 30%;
+    padding-right: 30%;
+    justify-content: space-evenly;
 }
 
 .btn-header {
@@ -96,6 +98,7 @@ section {
 
 .navbar-brand {
     word-wrap: normal;
+    margin-right: 0px;
 }
 
 .img-circle {
@@ -108,6 +111,11 @@ section {
     background-position: 50% 0%;
     background-size: auto 100%;
     background-repeat: repeat-x;
+}
+
+#social-buttons {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 #social-buttons span a, #social-buttons span a img {
@@ -147,6 +155,25 @@ section {
     max-width: 100%;
 }
 
+.carousel-caption {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 1rem;
+    width: fit-content;
+    justify-self: center;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.carousel-caption h5 {
+    color: black;
+}
+
+/* Fix to prevent carousel resizing when transitioning between panels */
+.carousel-inner {
+    max-height: 640px !important;
+    max-width: 960px !important;
+}
+
 /* Hacky fix for the about section icon colors */
 .fa {
     color: var(--primary-color);
@@ -158,7 +185,7 @@ section {
     color: var(--background-color);
 }
 
-/* Styling for views larger than 992px (mainlg desktops) */
+/* Styling for views larger than 992px (mainly desktops) */
 @media (min-width: 992px) {
     /* Use consistent font size for screens this size and up to prevent navbar from expanding in height */
     .nav-link {
@@ -174,13 +201,25 @@ section {
     }
 
     /* Prevent keep nav items legible at lower screen widths */
+    .nav-item {
+        margin-left: -1px !important;
+        margin-right: -1px !important;
+    }
     .nav-link {
         font-size: 2.5vw;
     }
 
     /* Prevent social buttons from being too large at lower screen widths */
+    .social-buttons-container {
+        justify-content: flex-end;
+        width: 35%;
+        padding-right: 0px;
+    }
     #social-buttons span a, #social-buttons span a img {
         height: 24px;
+    }
+    #social-buttons {
+        display: block;
     }
     
     /* Use more of the horizontal space in the header at lower screen widths */
@@ -204,7 +243,7 @@ section {
 
     /* Prevent nav items from taking up too much horizontal space at lower screen widths */
     .nav-link {
-        padding: 0.5rem 0.5rem;
+        padding: 0.2rem 0.2rem;
         font-size: 3vw;
     }
 
@@ -213,20 +252,36 @@ section {
         height: 16px;
     }
 
-    /* Place social buttons in vertical stack at lower screen widths and adjust width accordingly */
+    /* Free up a bit of extra horizontal space for the social buttons */
+    #event-date-container {
+        font-size: 3.5vw;
+        margin-top: 5px;
+    }
+
+    /* Place social buttons in a grid at lower screen widths and adjust width accordingly */
     #social-buttons {
         justify-content: flex-start !important;
         flex-direction: column;
         display: grid;
         width: 5%;
+        grid-template-columns: 20px 20px 20px;
     }
     .social-buttons-container {
-        justify-content: flex-end;
-        display: grid;
+        display: block;
+        width: 20%;
+        padding-right: 30px;
+        padding-top: 10px;
     }
     .site-title {
         width: 95%;
         margin-right: 5%;
+        padding-top: 10px;
+    }
+
+    /* Make sure splash message wraps correctly at lower screen widths */    
+    .header-splash-message {
+        display: inline-block;
+        max-width: 80%;
     }
 
     /* Use more of the horizontal space in the header at lower screen widths */
