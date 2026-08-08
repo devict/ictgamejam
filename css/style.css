@@ -59,6 +59,8 @@ section {
     position: absolute; 
     right: 0;
     width: 30%;
+    padding-right: 30%;
+    justify-content: space-evenly;
 }
 
 .btn-header {
@@ -208,7 +210,9 @@ section {
 
     /* Prevent social buttons from being too large at lower screen widths */
     .social-buttons-container {
+        justify-content: flex-end;
         width: 35%;
+        padding-right: 0px;
     }
     #social-buttons span a, #social-buttons span a img {
         height: 24px;
@@ -255,18 +259,22 @@ section {
         width: 5%;
     }
     .social-buttons-container {
-        justify-content: flex-end;
-        display: grid;
+        display: block;
+        columns: 1px 3;
+        width: 20%;
+        padding-right: 30px;
+        padding-top: 10px;
     }
     .site-title {
         width: 95%;
         margin-right: 5%;
+        padding-top: 10px;
     }
 
     /* Make sure splash message wraps correctly at lower screen widths */    
     .header-splash-message {
         display: inline-block;
-        max-width: 90%;
+        max-width: 80%;
     }
 
     /* Use more of the horizontal space in the header at lower screen widths */
