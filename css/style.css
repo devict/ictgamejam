@@ -198,11 +198,18 @@ section {
     }
 
     /* Prevent keep nav items legible at lower screen widths */
+    .nav-item {
+        margin-left: -1px !important;
+        margin-right: -1px !important;
+    }
     .nav-link {
         font-size: 2.5vw;
     }
 
     /* Prevent social buttons from being too large at lower screen widths */
+    .social-buttons-container {
+        width: 35%;
+    }
     #social-buttons span a, #social-buttons span a img {
         height: 24px;
     }
@@ -230,10 +237,6 @@ section {
     }
 
     /* Prevent nav items from taking up too much horizontal space at lower screen widths */
-    .nav-item {
-        margin-left: -1px !important;
-        margin-right: -1px !important;
-    }
     .nav-link {
         padding: 0.2rem 0.2rem;
         font-size: 3vw;
@@ -254,8 +257,6 @@ section {
     .social-buttons-container {
         justify-content: flex-end;
         display: grid;
-        padding-right: 20px;
-        padding-top: 15px;
     }
     .site-title {
         width: 95%;
