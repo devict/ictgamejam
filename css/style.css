@@ -169,6 +169,33 @@ section {
     display: none;
 }
 
+.minigameStartButton {
+    position: absolute; 
+    bottom: 5%; 
+    right: 5%;
+    text-align: center;
+	display: inline-block;
+	margin:5px;
+    font-weight: bold;
+    padding: 10px 10px 10px 10px ;
+    background-color: #89bac5;
+    text-shadow: 0px 0px white, 1px 1px black;
+    color: white;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+    box-shadow: 0 .1em #56757c; 
+    cursor: pointer;
+ }
+
+ .minigameStartButton:disabled {
+    background-color: #527075;
+    color: gray;
+    text-shadow: 0px 0px gray, 1px 1px black;
+    box-shadow: 0 .1em #40575c; 
+ }
+
 .sponsor-logo {
     max-width: 30%;
 }
