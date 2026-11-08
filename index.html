@@ -33,10 +33,11 @@
 
         <!-- Custom JS -->
         <script src="js/countdown-timer.js"></script>
+        <script src="js/splash-text-rotation.js"></script>
         <script src="js/character-select.js"></script>
         <!-- Minigame -->
-        <!--<script src="minigame/lib/phaser.min.js"></script>-->
-        <!--<script src="minigame/src/main.js" type="module"></script>-->
+        <script src="minigame/lib/phaser.min.js"></script>
+        <script src="minigame/src/main.js" type="module"></script>
 
         <script type="text/javascript">
             function highlightAboutSectionTitle() {
@@ -123,7 +124,7 @@
                     <!-- Splash/countdown timer -->
                     <div class="header-splash align-content-center"> 
                         <div hidden id="countdown-timer">How much longer until ICT Game Jam?</div>
-                        <a class="header-splash-message" href="#previous-section">Congrats to our Summer 2026 Winning Game: BABOOM! by Team Monke</a>
+                        <a id="splash-text" class="header-splash-message" href="#previous-section">🎉 Congrats to our Summer 2026 Winning Games: BABOOM! by Monke (1st)</a>
                     </div>
                 </div>
 
@@ -499,7 +500,10 @@
                             <div style="position: absolute; top: 20%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Julian')"></div>
                             <div style="position: absolute; top: 36%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Kenny')"></div>
                             <div style="position: absolute; top: 25%; left: 76%" class="character-select-target" onmouseover="changeCharacter('Jarvis')"></div>
+                            <img id="minigameStartButton" style="position: absolute; top: 85%; left: 85%" src="img/start-button-inactive.webp" alt="START"></img>
                         <img/>
+                        <div id="gameContainer" class="gameContainerInactive">
+                        </div>
                     </div>
                 </div>
                 <div class="row text-center justify-content-center" style="margin-bottom: -80px; margin-top: 10px;">

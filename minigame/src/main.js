@@ -1,7 +1,8 @@
 let Phaser = window.Phaser;
 import PreloaderScene from "./preloader-scene.js";
 
-window.onload = function() {
+document.getElementById('minigameStartButton').onclick = function() {
+    document.getElementById('gameContainer').className = 'gameContainer';
     var config = {
         type: Phaser.AUTO,
         width: 208*2,
@@ -16,3 +17,10 @@ window.onload = function() {
     };
     window.gameInstance = new Phaser.Game(config);
 };
+
+document.getElementById('gameContainer').onclick = function(e) {
+    if (e.target === e.currentTarget) {
+        document.getElementById('gameContainer').className = 'gameContainerInactive';
+        window.gameInstance.destroy(true, false);
+    }
+}

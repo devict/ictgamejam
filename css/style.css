@@ -148,6 +148,27 @@ section {
     height: 15%;
 }
 
+.gameContainer {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: #00000090;
+    border-radius: 1rem;
+}
+
+.gameContainerInactive {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: none;
+}
+
 .sponsor-logo {
     max-width: 30%;
 }
