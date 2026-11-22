@@ -33,10 +33,11 @@
 
         <!-- Custom JS -->
         <script src="js/countdown-timer.js"></script>
+        <script src="js/splash-text-rotation.js"></script>
         <script src="js/character-select.js"></script>
         <!-- Minigame -->
-        <!--<script src="minigame/lib/phaser.min.js"></script>-->
-        <!--<script src="minigame/src/main.js" type="module"></script>-->
+        <script src="minigame/lib/phaser.min.js"></script>
+        <script src="minigame/src/main.js" type="module"></script>
 
         <script type="text/javascript">
             function highlightAboutSectionTitle() {
@@ -115,15 +116,15 @@
                         </span>
                     </div>
 
-                    <a hidden id="header-buy-ticket-button" class="btn btn-header p-2" href="https://www.zeffy.com/en-US/ticketing/2026-summer-ict-game-jam">Buy a Ticket Now</a>
+                    <a id="header-buy-ticket-button" class="btn btn-header p-2" href="https://www.zeffy.com/en-US/ticketing/2027-winter-ict-game-jam">Buy a Ticket Now</a>
                 </div>
                 
                 
                 <div class="countdown-container row pb-2">
                     <!-- Splash/countdown timer -->
                     <div class="header-splash align-content-center"> 
-                        <div hidden id="countdown-timer">How much longer until ICT Game Jam?</div>
-                        <a class="header-splash-message" href="#previous-section">Congrats to our Summer 2026 Winning Game: BABOOM! by Team Monke</a>
+                        <div id="countdown-timer">How much longer until ICT Game Jam?</div>
+                        <a hidden id="splash-text" class="header-splash-message" href="#previous-section">🎉 Congrats to our Summer 2026 Winning Games: BABOOM! by Monke (1st)</a>
                     </div>
                 </div>
 
@@ -233,7 +234,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center card">
                         <a id="what-is-button" class="btn btn-info p-2 m-4 btn-primary" onclick="highlightAboutSectionTitle()" href="#what-is-button">What's a game jam?</a>
-                        <a id="about-section-buy-ticket-button" class="btn p-2 m-4 btn-secondary" href="https://www.zeffy.com/en-US/ticketing/2026-summer-ict-game-jam">Buy a Ticket Now</a>
+                        <a id="about-section-buy-ticket-button" class="btn p-2 m-4 btn-secondary" href="https://www.zeffy.com/en-US/ticketing/2027-winter-ict-game-jam">Buy a Ticket Now</a>
                     </div>
                 </div>
             </div>
@@ -362,12 +363,12 @@
                     <br /><br />
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading">Location</h2>
-                        <!-- Hide this element after the winter game jam -->
-                        <h3 id="summer-jam-location-text" class="section-heading">
+                        <!-- Un-hide this element after the winter game jam -->
+                        <h3 id="summer-jam-location-text" class="section-heading" hidden>
                             Butler Community College Andover Campus<br><a href="https://goo.gl/maps/CmRmpSojvmSnkxEP8">715 East 13th Street, Andover, KS 67002</a>
                         </h3>
                         <!-- Un-hide this element after the summer game jam -->
-                        <h3 id="winter-jam-location-text" class="section-heading" hidden>
+                        <h3 id="winter-jam-location-text" class="section-heading">
                             Shocker Studios at WSU's South Campus<br><a href="https://maps.app.goo.gl/8fLTsQDXB3PEVh7H7">3803 E. Harry Street, Suite 121, Wichita, KS 67218</a>
                         </h3>
                         <div id="location-map"></div>
@@ -499,7 +500,10 @@
                             <div style="position: absolute; top: 20%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Julian')"></div>
                             <div style="position: absolute; top: 36%; left: 62%" class="character-select-target" onmouseover="changeCharacter('Kenny')"></div>
                             <div style="position: absolute; top: 25%; left: 76%" class="character-select-target" onmouseover="changeCharacter('Jarvis')"></div>
+                            <button id="minigameStartButton" class="minigameStartButton" disabled>START</button>
                         <img/>
+                        <div id="gameContainer" class="gameContainerInactive">
+                        </div>
                     </div>
                 </div>
                 <div class="row text-center justify-content-center" style="margin-bottom: -80px; margin-top: 10px;">

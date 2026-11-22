@@ -23,4 +23,5 @@ function changeCharacter(name) {
             newSource = 'img/characters/Noone.webp';
     }
     document.getElementById('character-select').src = newSource;
+    document.getElementById('minigameStartButton').removeAttribute('disabled');
 }
