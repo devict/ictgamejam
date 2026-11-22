@@ -59,7 +59,6 @@ section {
     position: absolute; 
     right: 0;
     width: 30%;
-    padding-right: 30%;
     justify-content: space-evenly;
 }
 
@@ -177,7 +176,7 @@ section {
 	display: inline-block;
 	margin:5px;
     font-weight: bold;
-    padding: 10px 10px 10px 10px ;
+    padding: 5px 10px 5px 10px ;
     background-color: #89bac5;
     text-shadow: 0px 0px white, 1px 1px black;
     color: white;
@@ -339,5 +338,26 @@ section {
     }
     .countdown-container {
         padding-left: 5px;
+    }
+
+    .minigameStartButton {
+        margin: 1px;
+        padding: 3px;
+        bottom: 12%;
+    }
+}
+
+/* Styling for views smaller than 364px (do these even exist?) */
+@media(max-width:363.98px) { 
+    /* Keep social buttons in top right without overlapping other header elements at super low screen widths*/
+    .social-buttons-container {
+        width: 15%;
+        padding-top: 0px;
+        margin-right: 3%;
+    }
+
+    /* Switch to 2 columns to better fit in changed container at super low screen widths*/
+    #social-buttons {
+        grid-template-columns: 20px 20px;
     }
 }
